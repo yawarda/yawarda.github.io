@@ -964,6 +964,53 @@ const PRODUCTS_DATA = [
   }
 ];
 
+/**
+ * Calculates accurate delivery timeline based on flower composition:
+ * - Tulips: 4 days
+ * - Lilies: 3 days
+ * - All other bouquets: 1 day
+ */
+function getProductDeliveryInfo(product) {
+  if (!product) {
+    return { days: 1, badgeText: "Delivery in 1 Day", badgeClass: "badge-green", detailText: "Delivery within 1 day" };
+  }
+
+  const name = (product.name || "").toLowerCase();
+  const category = (product.category || "").toLowerCase();
+  const flowers = (product.flowers || "").toLowerCase();
+
+  // 1. Tulips (4 Days)
+  if (category.includes("tulip") || name.includes("tulip") || flowers.includes("tulip")) {
+    return {
+      days: 4,
+      badgeText: "Delivery in 4 Days",
+      badgeClass: "badge-blue",
+      detailText: "Delivery within 4 days (Holland Tulips)",
+      timeline: "4 days"
+    };
+  }
+
+  // 2. Lilies (3 Days)
+  if (category.includes("lilies") || category.includes("lily") || name.includes("lilies") || name.includes("lily") || flowers.includes("lil") || flowers.includes("stargazer")) {
+    return {
+      days: 3,
+      badgeText: "Delivery in 3 Days",
+      badgeClass: "badge-amber",
+      detailText: "Delivery within 3 days (Fresh Lilies)",
+      timeline: "3 days"
+    };
+  }
+
+  // 3. Standard bouquets (1 Day)
+  return {
+    days: 1,
+    badgeText: "Delivery in 1 Day",
+    badgeClass: "badge-green",
+    detailText: "Delivery within 1 day",
+    timeline: "1 day"
+  };
+}
+
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { PRODUCTS_DATA };
+  module.exports = { PRODUCTS_DATA, getProductDeliveryInfo };
 }

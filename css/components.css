@@ -1432,28 +1432,30 @@
   color: rgba(250, 248, 245, 0.5);
 }
 
-/* 16. FLOATING WHATSAPP BUTTON */
-.floating-whatsapp-btn {
+/* 16. FLOATING DIRECT DM BUTTON */
+.floating-whatsapp-btn,
+.floating-dm-btn {
   position: fixed;
   bottom: 30px;
   right: 30px;
   width: 60px;
   height: 60px;
-  background-color: var(--color-whatsapp);
+  background-color: var(--color-dm-orange);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #FFFFFF;
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+  box-shadow: 0 8px 24px rgba(174, 55, 18, 0.4);
   z-index: 150;
   transition: all var(--transition-smooth);
   animation: pulseGlow 2.5s infinite;
 }
 
-.floating-whatsapp-btn:hover {
+.floating-whatsapp-btn:hover,
+.floating-dm-btn:hover {
   transform: scale(1.1);
-  background-color: var(--color-whatsapp-dark);
+  background-color: var(--color-dm-orange-dark);
 }
 
 /* 17. TOAST ALERTS */

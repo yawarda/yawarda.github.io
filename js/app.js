@@ -35,13 +35,15 @@ const App = {
       return;
     }
 
-    container.innerHTML = products.map(product => `
+    container.innerHTML = products.map(product => {
+      const delivery = getProductDeliveryInfo(product);
+      return `
       <div class="product-card" data-product-id="${product.id}">
         <div class="product-media">
           <img src="${product.image}" alt="${product.name}" class="product-img" loading="lazy">
           <div class="product-badges">
             ${product.badge ? `<span class="badge badge-gold">${product.badge}</span>` : ''}
-            <span class="badge badge-green">Same-Day Delivery</span>
+            <span class="badge ${delivery.badgeClass}">${delivery.badgeText}</span>
           </div>
           <div class="product-actions-overlay">
             <button class="product-overlay-btn" onclick="App.openQuickView('${product.id}')">
@@ -71,14 +73,15 @@ const App = {
 
           <div class="product-btn-row">
             <button class="btn btn-outline btn-sm" onclick="App.openQuickView('${product.id}')">Details</button>
-            <button class="btn btn-whatsapp btn-sm" onclick="App.instantWhatsAppOrder('${product.id}')">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-              WhatsApp
+            <button class="btn btn-dm btn-sm" onclick="App.instantWhatsAppOrder('${product.id}')">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              Send DM
             </button>
           </div>
         </div>
       </div>
-    `).join('');
+      `;
+    }).join('');
   },
 
   bindCategoryFilters() {
@@ -200,10 +203,20 @@ const App = {
     const stemsContainer = document.getElementById('modal-stem-options');
     const colorsContainer = document.getElementById('modal-color-options');
 
+    const delivery = getProductDeliveryInfo(product);
+
     if (imgEl) imgEl.src = product.image;
-    if (subtitleEl) subtitleEl.textContent = product.subtitle;
+    if (subtitleEl) subtitleEl.textContent = `${product.subtitle} · ${delivery.badgeText}`;
     if (titleEl) titleEl.textContent = product.name;
-    if (descEl) descEl.textContent = product.description;
+    if (descEl) {
+      descEl.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: #166534; font-weight: 600; background: #F0FDF4; border: 1px solid #BBF7D0; padding: 6px 12px; border-radius: 4px; margin-bottom: 12px;">
+          <span>🚚</span>
+          <span>${delivery.detailText} across Kozhikode & Kannur</span>
+        </div>
+        <div>${product.description}</div>
+      `;
+    }
     if (flowersEl) flowersEl.textContent = product.flowers;
 
     // Stem options
@@ -408,12 +421,12 @@ const App = {
               We couldn't automatically verify "<strong>${query}</strong>". Please DM our Concierge on WhatsApp to confirm delivery to your exact address.
             </p>
             <div style="margin-top: 6px;">
-              <a href="https://wa.me/919847000000?text=${encodeURIComponent(`Hello YA.WARDA, I would like to check delivery availability for location/pincode: ${query}`)}" 
+              <a href="https://ig.me/m/ya.warda_?text=${encodeURIComponent(`Hello YA.WARDA, I would like to check delivery availability for location/pincode: ${query}`)}" 
                  target="_blank" 
-                 class="btn btn-whatsapp btn-sm" 
+                 class="btn btn-dm btn-sm" 
                  style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                DM on WhatsApp for Delivery Check
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                DM on Instagram for Delivery Check
               </a>
             </div>
           </div>
@@ -441,17 +454,19 @@ const App = {
               <span>✨ Delivery Available in ${poName}, ${district} (${pin})!</span>
             </div>
             <p style="margin: 0; font-size: 0.84rem; line-height: 1.5;">
-              • <strong>Same-Day Express Delivery</strong> & <strong>Midnight Surprise</strong> slots available across ${district} District.<br>
-              • Handcrafted farm-fresh bouquets dispatched directly from our Kuttiady & Kozhikode ateliers.
+              • <strong>Standard Bouquets:</strong> Delivery within <strong>1 Day</strong>.<br>
+              • <strong>Lilies Collections:</strong> Delivery within <strong>3 Days</strong>.<br>
+              • <strong>Tulips Collections:</strong> Delivery within <strong>4 Days</strong>.<br>
+              • Handcrafted farm-fresh bouquets dispatched directly from our Kuttiady atelier.
             </p>
             <div style="display: flex; gap: 10px; margin-top: 6px; flex-wrap: wrap;">
               <a href="#shop-section" class="btn btn-primary btn-sm" style="padding: 6px 14px;">Explore Catalog</a>
-              <a href="https://wa.me/919847000000?text=${encodeURIComponent(`Hello YA.WARDA, I checked pincode ${pin} (${poName}, ${district}) and delivery is available. I would like to place an order.`)}" 
+              <a href="https://ig.me/m/ya.warda_?text=${encodeURIComponent(`Hello YA.WARDA, I checked pincode ${pin} (${poName}, ${district}) and delivery is available. I would like to place an order.`)}" 
                  target="_blank" 
-                 class="btn btn-whatsapp btn-sm" 
+                 class="btn btn-dm btn-sm" 
                  style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                Order via WhatsApp
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                Order via Instagram DM
               </a>
             </div>
           </div>
@@ -466,15 +481,15 @@ const App = {
               <span>💬 DM for More Info (${poName}, ${district}, ${state} - ${pin})</span>
             </div>
             <p style="margin: 0; font-size: 0.84rem; color: #533f03; line-height: 1.5;">
-              This address is in <strong>${district}</strong> district. Standard automated same-day delivery covers <strong>Kannur</strong> & <strong>Kozhikode</strong>. Special long-distance courier / custom delivery may be arranged upon request.
+              This address is in <strong>${district}</strong> district. Standard delivery coverage includes <strong>Kannur</strong> & <strong>Kozhikode</strong>. Special courier / custom delivery may be arranged upon request.
             </p>
             <div style="margin-top: 6px;">
-              <a href="https://wa.me/919847000000?text=${encodeURIComponent(`Hello YA.WARDA, I would like to inquire about special flower delivery to ${poName}, ${district} (Pincode: ${pin}).`)}" 
+              <a href="https://ig.me/m/ya.warda_?text=${encodeURIComponent(`Hello YA.WARDA, I would like to inquire about special flower delivery to ${poName}, ${district} (Pincode: ${pin}).`)}" 
                  target="_blank" 
-                 class="btn btn-whatsapp btn-sm" 
+                 class="btn btn-dm btn-sm" 
                  style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                DM Us on WhatsApp for Delivery Info
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                DM Us on Instagram for Delivery Info
               </a>
             </div>
           </div>
@@ -492,9 +507,9 @@ const App = {
         resultBox.innerHTML = `
           <div style="display: flex; flex-direction: column; gap: 8px;">
             <div style="font-weight: 600; font-size: 0.95rem;">✨ Delivery Available in ${query}!</div>
-            <p style="margin: 0; font-size: 0.84rem;">Same-Day Express Delivery & Midnight slots available across Kannur & Kozhikode.</p>
+            <p style="margin: 0; font-size: 0.84rem;">Delivery within 1 Day (Lilies: 3 Days, Tulips: 4 Days) across Kannur & Kozhikode.</p>
             <div style="margin-top: 4px;">
-              <a href="https://wa.me/919847000000?text=${encodeURIComponent(`Hello YA.WARDA, I would like to order flowers for delivery to ${query}.`)}" target="_blank" class="btn btn-whatsapp btn-sm">Order on WhatsApp</a>
+              <a href="https://ig.me/m/ya.warda_?text=${encodeURIComponent(`Hello YA.WARDA, I would like to order flowers for delivery to ${query}.`)}" target="_blank" class="btn btn-dm btn-sm">Order on Instagram DM</a>
             </div>
           </div>
         `;
@@ -504,9 +519,9 @@ const App = {
         resultBox.innerHTML = `
           <div style="display: flex; flex-direction: column; gap: 8px;">
             <div style="font-weight: 600; color: #856404;">💬 DM for Delivery Info (${query})</div>
-            <p style="margin: 0; font-size: 0.84rem; color: #533f03;">Please DM our Concierge on WhatsApp to confirm delivery to your location.</p>
+            <p style="margin: 0; font-size: 0.84rem; color: #533f03;">Please DM our Concierge on Instagram to confirm delivery to your location.</p>
             <div style="margin-top: 4px;">
-              <a href="https://wa.me/919847000000?text=${encodeURIComponent(`Hello YA.WARDA, I would like to check delivery to: ${query}`)}" target="_blank" class="btn btn-whatsapp btn-sm">DM on WhatsApp for Delivery Info</a>
+              <a href="https://ig.me/m/ya.warda_?text=${encodeURIComponent(`Hello YA.WARDA, I would like to check delivery to: ${query}`)}" target="_blank" class="btn btn-dm btn-sm">DM on Instagram for Delivery Info</a>
             </div>
           </div>
         `;

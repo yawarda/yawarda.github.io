@@ -1,25 +1,31 @@
 /* ==========================================================================
-   YA.WARDA WHATSAPP & VIP DM ORDER ENGINE
-   Handles direct DM order formatting for Kuttiady & Kozhikode deliveries
+   YA.WARDA INSTAGRAM DM & VIP ORDER ENGINE
+   Handles direct Instagram DM order formatting (https://ig.me/m/ya.warda_)
    ========================================================================== */
 
-const YA_WARDA_WHATSAPP_NUMBER = "919847000000"; // YA.WARDA Concierge WhatsApp
+const YA_WARDA_IG_USERNAME = "ya.warda_"; // Official YA.WARDA Instagram Handle
 
 const WhatsAppEngine = {
   /**
-   * Generates a direct WhatsApp link from text message
+   * Generates a direct Instagram DM link with prefilled message
+   * Format: https://ig.me/m/ya.warda_?text=...
    */
   createLink(message) {
     const encoded = encodeURIComponent(message);
-    return `https://wa.me/${YA_WARDA_WHATSAPP_NUMBER}?text=${encoded}`;
+    return `https://ig.me/m/${YA_WARDA_IG_USERNAME}?text=${encoded}`;
   },
 
   /**
-   * Opens WhatsApp directly
+   * Opens Instagram DM directly in a new tab/app
    */
-  openWhatsApp(message) {
+  openDM(message) {
     const url = this.createLink(message);
     window.open(url, '_blank');
+  },
+
+  // Alias for backward compatibility
+  openWhatsApp(message) {
+    this.openDM(message);
   },
 
   /**
