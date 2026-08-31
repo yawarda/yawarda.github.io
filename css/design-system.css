@@ -1,0 +1,338 @@
+/* ==========================================================================
+   YA.WARDA HAUTE FLORAL ARTISTRY - DESIGN SYSTEM
+   Inspired by The Flower Company (theflowercompany.in)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+
+:root {
+  /* Core Luxury Color Palette */
+  --color-primary: #121212;          /* Obsidian Black */
+  --color-primary-light: #1e1e1e;
+  --color-accent: #C5A880;           /* Champagne Gold */
+  --color-accent-hover: #b09167;
+  --color-accent-light: #F4ECE1;
+  --color-accent-dark: #8F7249;
+  
+  --color-bg: #FAF8F5;              /* Soft Alabaster Linen */
+  --color-surface: #FFFFFF;
+  --color-surface-elevated: #FFFFFF;
+  --color-surface-alt: #F5F1EB;
+  --color-border: #E8E2D9;
+  --color-border-dark: #121212;
+  --color-border-gold: rgba(197, 168, 128, 0.35);
+
+  --color-text-main: #1C1B1A;
+  --color-text-muted: #6B6864;
+  --color-text-light: #949089;
+  --color-text-inverse: #FAF8F5;
+  
+  --color-rose-blush: #F7EDED;
+  --color-emerald: #1B4D3E;
+  --color-burgundy: #581825;
+  --color-crimson: #B91C1C;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-dark: #1EBE5D;
+
+  /* Typography */
+  --font-serif-display: 'Playfair Display', Georgia, serif;
+  --font-serif-editorial: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Elevation & Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.15);
+  --shadow-gold: 0 8px 30px rgba(197, 168, 128, 0.25);
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-luxury: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout Spacing */
+  --container-width: 1360px;
+  --header-height: 86px;
+  --announcement-height: 38px;
+}
+
+/* Global Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif-display);
+  font-weight: 400;
+  color: var(--color-primary);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+button {
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 90px 0;
+  position: relative;
+}
+
+.section-sm {
+  padding: 60px 0;
+}
+
+.section-dark {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.section-dark h1,
+.section-dark h2,
+.section-dark h3,
+.section-dark h4 {
+  color: var(--color-text-inverse);
+}
+
+.section-dark p {
+  color: rgba(250, 248, 245, 0.7);
+}
+
+.section-alt {
+  background-color: var(--color-surface-alt);
+}
+
+/* Section Header Component */
+.section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 56px;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.section-dark .section-tag {
+  color: var(--color-accent);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+}
+
+/* Luxury Button System */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 32px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: all var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  border-radius: 0px;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border: 1px solid var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+  border: 1px solid var(--color-accent);
+}
+
+.btn-accent:hover {
+  background-color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.btn-outline-gold {
+  background-color: transparent;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+}
+
+.btn-outline-gold:hover {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+}
+
+.btn-whatsapp {
+  background-color: var(--color-whatsapp);
+  color: #FFFFFF;
+  border: 1px solid var(--color-whatsapp);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.28);
+}
+
+.btn-whatsapp:hover {
+  background-color: var(--color-whatsapp-dark);
+  border-color: var(--color-whatsapp-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
+}
+
+.btn-sm {
+  padding: 10px 20px;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+}
+
+.btn-lg {
+  padding: 18px 42px;
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* Badge styling */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.badge-gold {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+}
+
+.badge-dark {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.badge-outline {
+  background: transparent;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent-dark);
+}
+
+.badge-green {
+  background-color: #E8F7EE;
+  color: #1EBE5D;
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(197, 168, 128, 0.5); }
+  70% { box-shadow: 0 0 0 14px rgba(197, 168, 128, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(197, 168, 128, 0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

@@ -1,0 +1,200 @@
+/* ==========================================================================
+   YA.WARDA HAUTE FLORAL ARTISTRY - RESPONSIVE STYLES
+   ========================================================================== */
+
+/* Mobile Navigation Drawer */
+.mobile-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  left: -320px;
+  width: 300px;
+  height: 100%;
+  background-color: #FAF8F5;
+  z-index: 250;
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.2);
+  transition: left var(--transition-smooth);
+  padding: 40px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mobile-nav-drawer.open {
+  left: 0;
+}
+
+.mobile-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobile-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobile-nav-links a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  display: block;
+}
+
+.mobile-nav-links a:hover {
+  color: var(--color-accent-dark);
+}
+
+.mobile-nav-footer {
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Breakpoint: Desktop Small / Large Tablets (1200px) */
+@media (max-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .silhouette-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .lookbook-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Breakpoint: Tablet (992px) */
+@media (max-width: 992px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .mobile-nav-toggle {
+    display: flex;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .customizer-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .concierge-card {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 40px 24px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .modal-container {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-gallery {
+    max-height: 350px;
+  }
+}
+
+/* Breakpoint: Mobile (768px) */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 72px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-desc {
+    font-size: 0.95rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .silhouette-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lookbook-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .cart-drawer {
+    max-width: 100%;
+  }
+
+  .customizer-choice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pincode-form {
+    flex-direction: column;
+  }
+
+  .floating-whatsapp-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+  }
+}
