@@ -68,12 +68,12 @@ const CartManager = {
       });
     }
 
-    // WhatsApp checkout button inside drawer
+    // Instagram DM checkout button inside drawer
     const waCheckoutBtn = document.getElementById('btn-cart-whatsapp-checkout');
     if (waCheckoutBtn) {
       waCheckoutBtn.addEventListener('click', () => {
         this.collectGiftDetails();
-        WhatsAppEngine.checkoutCart(this.state);
+        InstagramEngine.checkoutCart(this.state);
       });
     }
 

@@ -96,6 +96,11 @@
     display: flex;
   }
 
+  .header-actions {
+    margin-left: 0;
+    gap: 12px;
+  }
+
   .brand-logo .logo-main,
   .logo-main {
     font-size: 1.45rem;
@@ -139,8 +144,8 @@
 /* Breakpoint: Mobile (768px) */
 @media (max-width: 768px) {
   :root {
-    --header-height: 64px;
-    --announcement-height: 34px;
+    --header-height: 60px;
+    --announcement-height: 32px;
   }
 
   /* Top Announcement Bar on Mobile */
@@ -161,42 +166,55 @@
 
   /* Header on Mobile */
   .header-container {
-    padding: 0 16px;
+    padding: 0 14px;
   }
 
   .brand-logo .logo-main,
   .logo-main {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 
   .brand-logo .logo-sub {
-    font-size: 0.48rem;
-    letter-spacing: 0.2em;
+    font-size: 0.46rem;
+    letter-spacing: 0.18em;
   }
 
   .header-actions {
-    gap: 10px;
+    margin-left: 0;
+    gap: 8px;
   }
 
-  /* Compact Circular WhatsApp CTA on Mobile */
-  .header-actions .btn-whatsapp {
-    width: 36px;
-    height: 36px;
-    padding: 0;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+  /* Sleek Circular DM CTA on Mobile */
+  .header-actions .btn-dm,
+  .header-actions .btn-whatsapp,
+  .header-dm-btn {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    max-width: 36px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    font-size: 0 !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(174, 55, 18, 0.35) !important;
   }
 
-  .header-actions .btn-whatsapp span {
-    display: none;
+  .header-actions .btn-dm span,
+  .header-actions .btn-whatsapp span,
+  .header-dm-btn span {
+    display: none !important;
   }
 
-  .header-actions .btn-whatsapp svg {
-    width: 18px;
-    height: 18px;
+  .header-actions .btn-dm svg,
+  .header-actions .btn-whatsapp svg,
+  .header-dm-btn svg {
+    width: 16px !important;
+    height: 16px !important;
+    margin: 0 !important;
   }
 
   .section {
@@ -269,11 +287,31 @@
 @media (max-width: 480px) {
   .brand-logo .logo-main,
   .logo-main {
-    font-size: 1.18rem;
+    font-size: 1.15rem;
   }
 
   .brand-logo .logo-sub {
     display: none;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .header-actions .btn-dm,
+  .header-actions .btn-whatsapp,
+  .header-dm-btn {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    max-width: 32px !important;
+  }
+
+  .header-actions .btn-dm svg,
+  .header-actions .btn-whatsapp svg,
+  .header-dm-btn svg {
+    width: 14px !important;
+    height: 14px !important;
   }
 
   .hero-title {

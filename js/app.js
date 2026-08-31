@@ -245,6 +245,18 @@ const App = {
       }
     }
 
+    // Date and location initialization
+    const dateInput = document.getElementById('modal-delivery-date');
+    if (dateInput) {
+      const today = new Date();
+      const targetDate = new Date();
+      targetDate.setDate(today.getDate() + (delivery.days || 1));
+      const dateStr = targetDate.toISOString().split('T')[0];
+      const todayStr = today.toISOString().split('T')[0];
+      dateInput.min = todayStr;
+      dateInput.value = dateStr;
+    }
+
     this.updateModalPrice();
 
     modal.classList.add('open');
@@ -299,9 +311,19 @@ const App = {
   modalWhatsAppOrder() {
     if (!this.activeProductModal) return;
     const { product, selectedStem, selectedColor } = this.activeProductModal;
-    WhatsAppEngine.orderSingleProduct(product, {
+
+    const dateInput = document.getElementById('modal-delivery-date');
+    const slotInput = document.getElementById('modal-delivery-slot');
+    const locationInput = document.getElementById('modal-delivery-location');
+    const cardMsgInput = document.getElementById('modal-card-message');
+
+    InstagramEngine.orderSingleProduct(product, {
       stemOption: selectedStem,
-      boxColor: selectedColor
+      boxColor: selectedColor,
+      deliveryDate: dateInput ? dateInput.value : '',
+      deliverySlot: slotInput ? slotInput.value : '',
+      location: locationInput ? locationInput.value.trim() : '',
+      cardMessage: cardMsgInput ? cardMsgInput.value.trim() : ''
     });
   },
 
@@ -326,7 +348,7 @@ const App = {
   instantWhatsAppOrder(productId) {
     const product = PRODUCTS_DATA.find(p => p.id === productId);
     if (!product) return;
-    WhatsAppEngine.orderSingleProduct(product);
+    InstagramEngine.orderSingleProduct(product);
   },
 
   bindPincodeChecker() {
@@ -529,20 +551,48 @@ const App = {
     }
   },
 
+  handleConciergeSubmit(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    const name = (document.getElementById('inq-name')?.value || '').trim();
+    const date = (document.getElementById('inq-date')?.value || '').trim();
+    const time = (document.getElementById('inq-time')?.value || '').trim();
+    const details = (document.getElementById('inq-details')?.value || '').trim();
+
+    let msg = `🌸 *CUSTOM BOUQUET INQUIRY — YA.WARDA*\n`;
+    msg += `━━━━━━━━━━━━━━━━━━━━━━\n`;
+    msg += `👤 *Customer Name:* ${name || 'Customer'}\n`;
+    msg += `📅 *Delivery Date:* ${date || '[Not specified]'}\n`;
+    if (time) msg += `⏰ *Preferred Time:* ${time}\n`;
+    msg += `💐 *Bouquet & Flower Requirement:*\n${details}\n`;
+    msg += `\n━━━━━━━━━━━━━━━━━━━━━━\n`;
+    msg += `Hello YA.WARDA Master Florist, I would like to customize a fresh bouquet. Please confirm availability & pricing on WhatsApp! ✨`;
+
+    const whatsappNumber = "916235828338";
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+  },
+
   bindConciergeForm() {
-    const form = document.getElementById('concierge-vip-form');
-    if (form) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const data = {
-          name: document.getElementById('concierge-name').value.trim(),
-          phone: document.getElementById('concierge-phone').value.trim(),
-          occasion: document.getElementById('concierge-occasion').value,
-          location: document.getElementById('concierge-location').value,
-          notes: document.getElementById('concierge-notes').value.trim()
-        };
-        WhatsAppEngine.inquireConcierge(data);
-      });
+    const quickForm = document.getElementById('quick-concierge-form');
+    if (quickForm) {
+      quickForm.addEventListener('submit', (e) => this.handleConciergeSubmit(e));
+    }
+
+    const vipForm = document.getElementById('concierge-vip-form');
+    if (vipForm) {
+      vipForm.addEventListener('submit', (e) => this.handleConciergeSubmit(e));
+    }
+
+    // Set min date on inq-date to today
+    const inqDate = document.getElementById('inq-date');
+    if (inqDate) {
+      const todayStr = new Date().toISOString().split('T')[0];
+      inqDate.min = todayStr;
+      if (!inqDate.value) {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        inqDate.value = tomorrow.toISOString().split('T')[0];
+      }
     }
   },
 
