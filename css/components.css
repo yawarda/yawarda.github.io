@@ -7,21 +7,25 @@
   background-color: var(--color-primary);
   color: var(--color-text-inverse);
   font-size: 0.72rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  height: var(--announcement-height);
+  min-height: var(--announcement-height);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   z-index: 110;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 8px 16px;
+  text-align: center;
 }
 
 .announcement-bar .ticker-item {
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
 .announcement-bar .gold-highlight {
@@ -62,6 +66,7 @@
   align-items: center;
   justify-content: space-between;
   height: var(--header-height);
+  position: relative;
 }
 
 /* Logo */
@@ -73,18 +78,25 @@
   text-decoration: none;
 }
 
-.brand-logo .logo-main {
-  font-family: var(--font-serif-display);
-  font-size: 1.85rem;
-  letter-spacing: 0.18em;
-  font-weight: 600;
+.brand-logo .logo-main,
+.logo-main {
+  font-family: var(--font-logo);
+  font-size: 1.65rem;
+  letter-spacing: 0.04em;
+  font-weight: 400;
   color: var(--color-primary);
   line-height: 1;
+  text-transform: uppercase;
+  transition: var(--transition-smooth);
+}
+
+.brand-logo:hover .logo-main {
+  color: var(--color-accent-dark);
 }
 
 .brand-logo .logo-sub {
-  font-size: 0.58rem;
-  letter-spacing: 0.35em;
+  font-size: 0.52rem;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
   color: var(--color-accent-dark);
   margin-top: 4px;

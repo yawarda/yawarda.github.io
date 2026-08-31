@@ -88,8 +88,17 @@
     display: none;
   }
 
+  .city-select-pill {
+    display: none;
+  }
+
   .mobile-nav-toggle {
     display: flex;
+  }
+
+  .brand-logo .logo-main,
+  .logo-main {
+    font-size: 1.45rem;
   }
 
   .hero-title {
@@ -130,23 +139,80 @@
 /* Breakpoint: Mobile (768px) */
 @media (max-width: 768px) {
   :root {
-    --header-height: 72px;
+    --header-height: 64px;
+    --announcement-height: 34px;
+  }
+
+  /* Top Announcement Bar on Mobile */
+  .announcement-bar {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    padding: 6px 12px;
+  }
+
+  .announcement-bar .ticker-item {
+    gap: 0;
+  }
+
+  .announcement-bar .divider-dot,
+  .announcement-bar .ticker-item span:nth-child(n+2) {
+    display: none;
+  }
+
+  /* Header on Mobile */
+  .header-container {
+    padding: 0 16px;
+  }
+
+  .brand-logo .logo-main,
+  .logo-main {
+    font-size: 1.3rem;
+  }
+
+  .brand-logo .logo-sub {
+    font-size: 0.48rem;
+    letter-spacing: 0.2em;
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+
+  /* Compact Circular WhatsApp CTA on Mobile */
+  .header-actions .btn-whatsapp {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .header-actions .btn-whatsapp span {
+    display: none;
+  }
+
+  .header-actions .btn-whatsapp svg {
+    width: 18px;
+    height: 18px;
   }
 
   .section {
-    padding: 60px 0;
+    padding: 50px 0;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.85rem;
   }
 
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
   }
 
   .hero-desc {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
   }
 
   .features-grid {
@@ -196,5 +262,32 @@
     right: 20px;
     width: 52px;
     height: 52px;
+  }
+}
+
+/* Breakpoint: Small Mobile (480px) */
+@media (max-width: 480px) {
+  .brand-logo .logo-main,
+  .logo-main {
+    font-size: 1.18rem;
+  }
+
+  .brand-logo .logo-sub {
+    display: none;
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
   }
 }
