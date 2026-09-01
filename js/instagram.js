@@ -269,10 +269,6 @@ const InstagramEngine = {
       msg += `📍 *Delivery Area:* Kuttiady / Kozhikode / Kannur\n`;
     }
 
-    if (options.cardMessage && options.cardMessage.trim() !== '') {
-      msg += `💌 *Wax-Sealed Card Note:* "${options.cardMessage}"\n`;
-    }
-
     msg += `\n━━━━━━━━━━━━━━━━━━━━━━\n`;
     msg += `Hello @${YA_WARDA_IG_USERNAME}, I would like to place this order! Please confirm availability and share payment link ✨`;
 
@@ -315,8 +311,6 @@ const InstagramEngine = {
       msg += `👤 *Recipient:* ${customData.recipientName}\n`;
     }
 
-    if (customData.cardMessage) {
-      msg += `💌 *Wax-Sealed Note:* "${customData.cardMessage}"\n`;
     }
 
     msg += `\n━━━━━━━━━━━━━━━━━━━━━━\n`;
@@ -367,7 +361,6 @@ const InstagramEngine = {
     if (cartState.deliveryAddress) msg += `📍 *Address:* ${cartState.deliveryAddress}\n`;
     if (cartState.deliveryCity) msg += `🏙️ *Area / Pincode:* ${cartState.deliveryCity}\n`;
     if (cartState.recipientName) msg += `👤 *Recipient:* ${cartState.recipientName}\n`;
-    if (cartState.cardMessage) msg += `💌 *Wax-Sealed Card Note:* "${cartState.cardMessage}"\n`;
 
     msg += `\n━━━━━━━━━━━━━━━━━━━━━━\n`;
     msg += `Hello @${YA_WARDA_IG_USERNAME}, please confirm my order, slot reservation, and send payment QR / link! 🌹`;

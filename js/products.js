@@ -13,8 +13,9 @@ const PRODUCTS_DATA = [
     price: 1400,
     originalPrice: 1750,
     badge: "Bestseller",
-    image: "images/IMG_0001_1400.jpg",
-    secondaryImage: "images/IMG_0342_1100.jpg",
+    image: [
+      "images/IMG_0001_1400.jpg"
+    ],
     rating: 5.0,
     reviewCount: 42,
     flowers: "Pure White Avalanche Roses, Baby's Breath & Fresh Eucalyptus",
@@ -38,8 +39,9 @@ const PRODUCTS_DATA = [
     price: 1500,
     originalPrice: 1850,
     badge: "Trending",
-    image: "images/IMG_0070_1500.jpg",
-    secondaryImage: "images/IMG_0318_1600.jpg",
+    image: [
+      "images/IMG_0070_1500.jpg"
+    ],
     rating: 4.9,
     reviewCount: 36,
     flowers: "Two-Tone Pink Petal Roses, White Spray Chrysanthemums & Greenery",
@@ -62,8 +64,9 @@ const PRODUCTS_DATA = [
     price: 950,
     originalPrice: 1200,
     badge: "Seasonal",
-    image: "images/IMG_0091_950.jpg",
-    secondaryImage: "images/IMG_0363_3500.jpg",
+    image: [
+      "images/IMG_0091_950.jpg"
+    ],
     rating: 4.9,
     reviewCount: 28,
     flowers: "Farm-Fresh Holland White Tulips & Fresh Foliage",
@@ -86,8 +89,9 @@ const PRODUCTS_DATA = [
     price: 3000,
     originalPrice: 3600,
     badge: "Popular",
-    image: "images/IMG_0130_3000.jpg",
-    secondaryImage: "images/IMG_0245_3000.jpg",
+    image: [
+      "images/IMG_0130_3000.jpg"
+    ],
     rating: 4.9,
     reviewCount: 39,
     flowers: "Deep Red Dutch Roses, Coral Spray Roses, Ruffled Carnations & Fillers",
@@ -110,8 +114,9 @@ const PRODUCTS_DATA = [
     price: 4500,
     originalPrice: 5400,
     badge: "Haute Luxe",
-    image: "images/IMG_0169_4500.png",
-    secondaryImage: "images/IMG_0740_3500.png",
+    image: [
+      "images/IMG_0169_4500.png"
+    ],
     rating: 5.0,
     reviewCount: 47,
     flowers: "Baby Blue Hydrangeas, White Avalanche Roses, Baby's Breath & Salal",
@@ -134,8 +139,9 @@ const PRODUCTS_DATA = [
     price: 3800,
     originalPrice: 4600,
     badge: "Grand Fan",
-    image: "images/IMG_0186_3800.jpg",
-    secondaryImage: "images/IMG_0481_3600.jpg",
+    image: [
+      "images/IMG_0186_3800.jpg"
+    ],
     rating: 5.0,
     reviewCount: 53,
     flowers: "Pink Oriental Lilies, Coral Gerberas, Roses, Statice & Fresh Ferns",
@@ -158,8 +164,9 @@ const PRODUCTS_DATA = [
     price: 950,
     originalPrice: 1200,
     badge: "Bestseller",
-    image: "images/IMG_0229_950.jpg",
-    secondaryImage: "images/IMG_0245_3000.jpg",
+    image: [
+      "images/IMG_0229_950.jpg"
+    ],
     rating: 4.8,
     reviewCount: 65,
     flowers: "Selected Long-Stem Red Roses, Gypsophila Baby's Breath",
@@ -183,8 +190,9 @@ const PRODUCTS_DATA = [
     price: 5900,
     originalPrice: 7200,
     badge: "VIP Luxury",
-    image: "images/IMG_0231_5900.png",
-    secondaryImage: "images/IMG_0945_7200.png",
+    image: [
+      "images/IMG_0231_5900.png"
+    ],
     rating: 5.0,
     reviewCount: 31,
     flowers: "Roses in Multiple Hues, Vibrant Gerberas, Chrysanthemums & Golden Fillers",
@@ -207,8 +215,9 @@ const PRODUCTS_DATA = [
     price: 950,
     originalPrice: 1200,
     badge: "Value Pick",
-    image: "images/IMG_0232_950.jpg",
-    secondaryImage: "images/IMG_0253_1200.jpg",
+    image: [
+      "images/IMG_0232_950.jpg"
+    ],
     rating: 4.8,
     reviewCount: 29,
     flowers: "Red Roses, Pink Spray Roses, White Daisies & Button Mums",
@@ -231,8 +240,9 @@ const PRODUCTS_DATA = [
     price: 11000,
     originalPrice: 13500,
     badge: "Masterpiece",
-    image: "images/IMG_0238_11000.png",
-    secondaryImage: "images/IMG_0428_9200.jpg",
+    image: [
+      "images/IMG_0238_11000.png"
+    ],
     rating: 5.0,
     reviewCount: 19,
     flowers: "Massive White Oriental Lilies, Premium Dutch Roses, Orchids & Exotic Greens",
@@ -254,8 +264,9 @@ const PRODUCTS_DATA = [
     price: 3000,
     originalPrice: 3700,
     badge: "Bestseller",
-    image: "images/IMG_0241_3000.jpg",
-    secondaryImage: "images/IMG_0248_3000.jpg",
+    image: [
+      "images/IMG_0241_3000.jpg"
+    ],
     rating: 4.9,
     reviewCount: 44,
     flowers: "Pink Oriental Lilies, Avalanche White Roses & Salal Greens",
@@ -278,8 +289,9 @@ const PRODUCTS_DATA = [
     price: 2200,
     originalPrice: 2800,
     badge: "Gift Special",
-    image: "images/IMG_0243_2200.jpg",
-    secondaryImage: "images/IMG_0246_2200.jpg",
+    image: [
+      "images/IMG_0243_2200.jpg"
+    ],
     rating: 5.0,
     reviewCount: 38,
     flowers: "Fresh White Roses, Baby's Breath & Authentic Stitch Plush Toy",
@@ -301,8 +313,9 @@ const PRODUCTS_DATA = [
     price: 6500,
     originalPrice: 7800,
     badge: "Haute Luxe",
-    image: "images/IMG_0244_6500.jpg",
-    secondaryImage: "images/IMG_0945_7200.png",
+    image: [
+      "images/IMG_0244_6500.jpg"
+    ],
     rating: 5.0,
     reviewCount: 26,
     flowers: "Pink Stargazer Lilies, Spray Carnations, Roses & Golden Statice",
@@ -325,8 +338,9 @@ const PRODUCTS_DATA = [
     price: 3000,
     originalPrice: 3700,
     badge: "Editorial Pick",
-    image: "images/IMG_0245_3000.jpg",
-    secondaryImage: "images/IMG_0229_950.jpg",
+    image: [
+      "images/IMG_0245_3000.jpg"
+    ],
     rating: 4.9,
     reviewCount: 51,
     flowers: "Long-Stem Dutch Scarlet Roses, Spiral Eucalyptus & Gold Accents",
@@ -349,8 +363,9 @@ const PRODUCTS_DATA = [
     price: 2200,
     originalPrice: 2700,
     badge: "Gift Pick",
-    image: "images/IMG_0246_2200.jpg",
-    secondaryImage: "images/IMG_0243_2200.jpg",
+    image: [
+      "images/IMG_0246_2200.jpg"
+    ],
     rating: 4.9,
     reviewCount: 27,
     flowers: "Pastel Pink Roses, Baby's Breath & Plush Companion",
@@ -372,8 +387,9 @@ const PRODUCTS_DATA = [
     price: 3000,
     originalPrice: 3600,
     badge: "Fragrant",
-    image: "images/IMG_0248_3000.jpg",
-    secondaryImage: "images/IMG_0481_3600.jpg",
+    image: [
+      "images/IMG_0248_3000.jpg"
+    ],
     rating: 4.9,
     reviewCount: 35,
     flowers: "Pink Oriental Lilies, Gypsophila & Fresh Broad Ferns",
@@ -396,8 +412,9 @@ const PRODUCTS_DATA = [
     price: 3600,
     originalPrice: 4300,
     badge: "Vibrant",
-    image: "images/IMG_0249_3600.jpg",
-    secondaryImage: "images/IMG_0737_1300.png",
+    image: [
+      "images/IMG_0249_3600.jpg"
+    ],
     rating: 4.9,
     reviewCount: 30,
     flowers: "Saffron Orange Asiatic Lilies, White Chrysanthemums, Purple Statice",
@@ -420,8 +437,9 @@ const PRODUCTS_DATA = [
     price: 1200,
     originalPrice: 1500,
     badge: "Popular",
-    image: "images/IMG_0253_1200.jpg",
-    secondaryImage: "images/IMG_0232_950.jpg",
+    image: [
+      "images/IMG_0253_1200.jpg"
+    ],
     rating: 4.8,
     reviewCount: 46,
     flowers: "Scarlet Red Roses, Blush Pink Roses & Green Accents",
@@ -444,8 +462,9 @@ const PRODUCTS_DATA = [
     price: 1600,
     originalPrice: 1950,
     badge: "Romantic",
-    image: "images/IMG_0318_1600.jpg",
-    secondaryImage: "images/IMG_0070_1500.jpg",
+    image: [
+      "images/IMG_0318_1600.jpg"
+    ],
     rating: 4.9,
     reviewCount: 37,
     flowers: "Blush Pink & Cream Two-Tone Roses, Gypsophila & Foliage",
@@ -468,8 +487,9 @@ const PRODUCTS_DATA = [
     price: 1200,
     originalPrice: 1500,
     badge: "Value Pick",
-    image: "images/IMG_0320_1200.png",
-    secondaryImage: "images/IMG_0241_3000.jpg",
+    image: [
+      "images/IMG_0320_1200.png"
+    ],
     rating: 4.8,
     reviewCount: 31,
     flowers: "White Lilies, Blush Pink Roses & Green Foliage",
@@ -492,8 +512,9 @@ const PRODUCTS_DATA = [
     price: 3600,
     originalPrice: 4400,
     badge: "Signature",
-    image: "images/IMG_0330_3600.png",
-    secondaryImage: "images/IMG_0449_3600.jpg",
+    image: [
+      "images/IMG_0330_3600.png"
+    ],
     rating: 5.0,
     reviewCount: 40,
     flowers: "Pure White Oriental Lilies, Pink Chrysanthemums, Purple Statice",
@@ -516,8 +537,9 @@ const PRODUCTS_DATA = [
     price: 1100,
     originalPrice: 1400,
     badge: "Fresh Pluck",
-    image: "images/IMG_0342_1100.jpg",
-    secondaryImage: "images/IMG_0001_1400.jpg",
+    image: [
+      "images/IMG_0342_1100.jpg"
+    ],
     rating: 4.8,
     reviewCount: 29,
     flowers: "White Roses, Purple Aster Daisies & Eucalyptus",
@@ -540,8 +562,9 @@ const PRODUCTS_DATA = [
     price: 3500,
     originalPrice: 4200,
     badge: "Haute Luxe",
-    image: "images/IMG_0363_3500.jpg",
-    secondaryImage: "images/IMG_0091_950.jpg",
+    image: [
+      "images/IMG_0363_3500.jpg"
+    ],
     rating: 5.0,
     reviewCount: 34,
     flowers: "Grade-A Dutch White Tulips & Minimalist Foliage",
@@ -564,8 +587,9 @@ const PRODUCTS_DATA = [
     price: 9200,
     originalPrice: 11000,
     badge: "Royal Special",
-    image: "images/IMG_0428_9200.jpg",
-    secondaryImage: "images/IMG_0238_11000.png",
+    image: [
+      "images/IMG_0428_9200.jpg"
+    ],
     rating: 5.0,
     reviewCount: 22,
     flowers: "Pink Spray Roses, Dutch White Tulips, Stargazer Lilies, Purple Statice & Orchids",
@@ -587,8 +611,9 @@ const PRODUCTS_DATA = [
     price: 3600,
     originalPrice: 4300,
     badge: "Trending",
-    image: "images/IMG_0449_3600.jpg",
-    secondaryImage: "images/IMG_0481_3600.jpg",
+    image: [
+      "images/IMG_0449_3600.jpg"
+    ],
     rating: 4.9,
     reviewCount: 38,
     flowers: "Pink Oriental Lilies, Maroon Chrysanthemums, White Spray Daisies",
@@ -611,8 +636,9 @@ const PRODUCTS_DATA = [
     price: 1400,
     originalPrice: 1750,
     badge: "Trending",
-    image: "images/IMG_0476_1400.jpg",
-    secondaryImage: "images/IMG_0245_3000.jpg",
+    image: [
+      "images/IMG_0476_1400.jpg"
+    ],
     rating: 4.9,
     reviewCount: 56,
     flowers: "Long-Stem Scarlet Red Roses, Baby's Breath & Eucalyptus",
@@ -629,23 +655,24 @@ const PRODUCTS_DATA = [
   },
   {
     id: "prod-0479",
-    name: "Romantic Roses & Chrysanthemums Petite Bouquet with Love Card",
-    subtitle: "Sweet Romance · Heart Wax-Sealed Message Card",
+    name: "Romantic Roses & Chrysanthemums Petite Bouquet",
+    subtitle: "Sweet Romance · Hand-Tied Fresh Kraft Wrap",
     category: "roses",
     subCategory: "mixed",
     price: 950,
     originalPrice: 1200,
     badge: "Value Pick",
-    image: "images/IMG_0479_950.jpg",
-    secondaryImage: "images/IMG_0232_950.jpg",
+    image: [
+      "images/IMG_0479_950.jpg"
+    ],
     rating: 4.8,
     reviewCount: 48,
-    flowers: "Red Roses, Pink Spray Roses, White Chrysanthemums & Love Card",
-    boxType: "Soft Kraft Wrap with Wax-Sealed Note",
+    flowers: "Red Roses, Pink Spray Roses, White Chrysanthemums & Greenery",
+    boxType: "Soft Kraft Wrap with Silk Ribbon",
     boxColors: ["Natural Kraft", "Dusty Pink", "Ruby Red"],
     stemOptions: [
-      { label: "Petite with Card", price: 950, default: true },
-      { label: "Deluxe with Card", price: 1550 }
+      { label: "Petite Wrap", price: 950, default: true },
+      { label: "Deluxe Wrap", price: 1550 }
     ],
     occasions: ["romance", "anniversary", "sorry", "love"],
     description: "A heartwarming gift bundle of fresh blooms paired with a customizable handwritten love card.",
@@ -660,8 +687,9 @@ const PRODUCTS_DATA = [
     price: 3600,
     originalPrice: 4400,
     badge: "Popular",
-    image: "images/IMG_0481_3600.jpg",
-    secondaryImage: "images/IMG_0186_3800.jpg",
+    image: [
+      "images/IMG_0481_3600.jpg"
+    ],
     rating: 4.9,
     reviewCount: 41,
     flowers: "Pink Oriental Lilies, Peach Roses, White Chrysanthemums & Baby's Breath",
@@ -684,8 +712,9 @@ const PRODUCTS_DATA = [
     price: 1300,
     originalPrice: 1600,
     badge: "Sunshine",
-    image: "images/IMG_0737_1300.png",
-    secondaryImage: "images/IMG_0249_3600.jpg",
+    image: [
+      "images/IMG_0737_1300.png"
+    ],
     rating: 4.9,
     reviewCount: 33,
     flowers: "Golden Sunflower, Yellow & White Chrysanthemums, Purple Statice",
@@ -708,8 +737,9 @@ const PRODUCTS_DATA = [
     price: 3500,
     originalPrice: 4200,
     badge: "Editorial Pick",
-    image: "images/IMG_0740_3500.png",
-    secondaryImage: "images/IMG_0930_3800.jpg",
+    image: [
+      "images/IMG_0740_3500.png"
+    ],
     rating: 5.0,
     reviewCount: 39,
     flowers: "White Casablanca Lilies, Champagne Roses, White Asters & Salal",
@@ -732,8 +762,9 @@ const PRODUCTS_DATA = [
     price: 1500,
     originalPrice: 1850,
     badge: "Popular",
-    image: "images/IMG_0741_1500.png",
-    secondaryImage: "images/IMG_0759_1600.jpg",
+    image: [
+      "images/IMG_0741_1500.png"
+    ],
     rating: 4.8,
     reviewCount: 32,
     flowers: "Purple Button Mums, Pink Spray Roses, White Asters & Gypsophila",
@@ -756,8 +787,9 @@ const PRODUCTS_DATA = [
     price: 1200,
     originalPrice: 1500,
     badge: "Value Pick",
-    image: "images/IMG_0742_1200.png",
-    secondaryImage: "images/IMG_0320_1200.png",
+    image: [
+      "images/IMG_0742_1200.png"
+    ],
     rating: 4.8,
     reviewCount: 26,
     flowers: "Deep Crimson Lilies, White Roses, Chrysanthemums & Greenery",
@@ -780,8 +812,9 @@ const PRODUCTS_DATA = [
     price: 950,
     originalPrice: 1200,
     badge: "Value Pick",
-    image: "images/IMG_0743_950.png",
-    secondaryImage: "images/IMG_1050_4000.jpg",
+    image: [
+      "images/IMG_0743_950.png"
+    ],
     rating: 4.8,
     reviewCount: 35,
     flowers: "Vibrant Pink Gerberas, Gypsophila & Fresh Greenery",
@@ -804,8 +837,9 @@ const PRODUCTS_DATA = [
     price: 2900,
     originalPrice: 3500,
     badge: "Florist Choice",
-    image: "images/IMG_0755_2900.jpg",
-    secondaryImage: "images/IMG_0958_1700.jpg",
+    image: [
+      "images/IMG_0755_2900.jpg"
+    ],
     rating: 4.9,
     reviewCount: 30,
     flowers: "White Lisianthus, Pink Carnations, White Chrysanthemums & Greenery",
@@ -828,8 +862,9 @@ const PRODUCTS_DATA = [
     price: 1600,
     originalPrice: 1950,
     badge: "Gift Set",
-    image: "images/IMG_0759_1600.jpg",
-    secondaryImage: "images/IMG_0479_950.jpg",
+    image: [
+      "images/IMG_0759_1600.jpg"
+    ],
     rating: 4.9,
     reviewCount: 34,
     flowers: "Purple Chrysanthemums, White Spray Daisies & Heart Message Card",
@@ -852,8 +887,9 @@ const PRODUCTS_DATA = [
     price: 3800,
     originalPrice: 4600,
     badge: "Haute Luxe",
-    image: "images/IMG_0930_3800.jpg",
-    secondaryImage: "images/IMG_0740_3500.png",
+    image: [
+      "images/IMG_0930_3800.jpg"
+    ],
     rating: 5.0,
     reviewCount: 43,
     flowers: "White Oriental Lilies, Pink Lisianthus, Avalanche Roses & Eucalyptus",
@@ -876,8 +912,9 @@ const PRODUCTS_DATA = [
     price: 7200,
     originalPrice: 8800,
     badge: "Masterpiece",
-    image: "images/IMG_0945_7200.png",
-    secondaryImage: "images/IMG_0428_9200.jpg",
+    image: [
+      "images/IMG_0945_7200.png"
+    ],
     rating: 5.0,
     reviewCount: 29,
     flowers: "Stargazer Lilies, Two-Tone Garden Roses, Purple Statice, Gerberas & Chrysanthemums",
@@ -899,8 +936,9 @@ const PRODUCTS_DATA = [
     price: 1700,
     originalPrice: 2100,
     badge: "Bridal Pick",
-    image: "images/IMG_0958_1700.jpg",
-    secondaryImage: "images/IMG_0001_1400.jpg",
+    image: [
+      "images/IMG_0958_1700.jpg"
+    ],
     rating: 5.0,
     reviewCount: 37,
     flowers: "White Roses, Pink & Purple Chrysanthemums, Carnations, Lace Wrap",
@@ -923,8 +961,9 @@ const PRODUCTS_DATA = [
     price: 4000,
     originalPrice: 4900,
     badge: "Bestseller",
-    image: "images/IMG_1050_4000.jpg",
-    secondaryImage: "images/IMG_0186_3800.jpg",
+    image: [
+      "images/IMG_1050_4000.jpg"
+    ],
     rating: 4.9,
     reviewCount: 45,
     flowers: "Pink Stargazer Lilies, Coral Roses, Pink Gerberas, Chrysanthemums & Gypsophila",
@@ -947,8 +986,9 @@ const PRODUCTS_DATA = [
     price: 2000,
     originalPrice: 2500,
     badge: "Trending",
-    image: "images/IMG_1100_2000.jpg",
-    secondaryImage: "images/IMG_0249_3600.jpg",
+    image: [
+      "images/IMG_1100_2000.jpg"
+    ],
     rating: 4.9,
     reviewCount: 31,
     flowers: "White Roses, Coral Spray Roses, Purple Statice & Button Mums",
@@ -966,7 +1006,7 @@ const PRODUCTS_DATA = [
 
 /**
  * Calculates accurate delivery timeline based on flower composition:
- * - Tulips: 4 days
+ * - Tulips & Hydrangeas: 4 days
  * - Lilies: 3 days
  * - All other bouquets: 1 day
  */
@@ -979,13 +1019,17 @@ function getProductDeliveryInfo(product) {
   const category = (product.category || "").toLowerCase();
   const flowers = (product.flowers || "").toLowerCase();
 
-  // 1. Tulips (4 Days)
-  if (category.includes("tulip") || name.includes("tulip") || flowers.includes("tulip")) {
+  // 1. Tulips & Hydrangeas (4 Days)
+  if (
+    category.includes("tulip") || name.includes("tulip") || flowers.includes("tulip") ||
+    category.includes("hydrangea") || name.includes("hydrangea") || flowers.includes("hydrangea")
+  ) {
+    const isHydrangea = category.includes("hydrangea") || name.includes("hydrangea") || flowers.includes("hydrangea");
     return {
       days: 4,
       badgeText: "Delivery in 4 Days",
       badgeClass: "badge-blue",
-      detailText: "Delivery within 4 days (Holland Tulips)",
+      detailText: isHydrangea ? "Delivery within 4 days (Fresh Hydrangeas)" : "Delivery within 4 days (Holland Tulips)",
       timeline: "4 days"
     };
   }

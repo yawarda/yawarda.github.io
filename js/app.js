@@ -37,10 +37,11 @@ const App = {
 
     container.innerHTML = products.map(product => {
       const delivery = getProductDeliveryInfo(product);
+      const coverImage = Array.isArray(product.image) ? product.image[0] : product.image;
       return `
       <div class="product-card" data-product-id="${product.id}">
         <div class="product-media">
-          <img src="${product.image}" alt="${product.name}" class="product-img" loading="lazy">
+          <img src="${coverImage}" alt="${product.name}" class="product-img" loading="lazy">
           <div class="product-badges">
             ${product.badge ? `<span class="badge badge-gold">${product.badge}</span>` : ''}
             <span class="badge ${delivery.badgeClass}">${delivery.badgeText}</span>
@@ -205,7 +206,46 @@ const App = {
 
     const delivery = getProductDeliveryInfo(product);
 
-    if (imgEl) imgEl.src = product.image;
+    // Extract all images (supports image as array or string, images array, secondaryImage)
+    const allImages = [];
+    if (Array.isArray(product.image)) {
+      allImages.push(...product.image);
+    } else if (product.image) {
+      allImages.push(product.image);
+    }
+    if (Array.isArray(product.images)) {
+      product.images.forEach(img => {
+        if (!allImages.includes(img)) allImages.push(img);
+      });
+    }
+    if (product.secondaryImage && !allImages.includes(product.secondaryImage)) {
+      allImages.push(product.secondaryImage);
+    }
+
+    const coverImage = allImages[0] || (Array.isArray(product.image) ? product.image[0] : product.image) || '';
+    if (imgEl) {
+      imgEl.src = coverImage;
+      imgEl.style.opacity = '1';
+    }
+
+    // Populate gallery thumbnails if multiple photos exist
+    const thumbsContainer = document.getElementById('modal-thumbnails-container');
+    if (thumbsContainer) {
+      if (allImages.length > 1) {
+        thumbsContainer.style.display = 'flex';
+        thumbsContainer.innerHTML = allImages.map((src, idx) => `
+          <button class="modal-thumb-btn ${idx === 0 ? 'active' : ''}" 
+                  onclick="App.switchModalImage('${src}', this)" 
+                  aria-label="View Photo ${idx + 1}">
+            <img src="${src}" alt="${product.name} Photo ${idx + 1}">
+          </button>
+        `).join('');
+      } else {
+        thumbsContainer.style.display = 'none';
+        thumbsContainer.innerHTML = '';
+      }
+    }
+
     if (subtitleEl) subtitleEl.textContent = `${product.subtitle} · ${delivery.badgeText}`;
     if (titleEl) titleEl.textContent = product.name;
     if (descEl) {
@@ -263,6 +303,21 @@ const App = {
     document.body.style.overflow = 'hidden';
   },
 
+  switchModalImage(src, btnElement) {
+    const mainImg = document.getElementById('modal-product-img');
+    if (mainImg) {
+      mainImg.style.opacity = '0.3';
+      setTimeout(() => {
+        mainImg.src = src;
+        mainImg.style.opacity = '1';
+      }, 120);
+    }
+    if (btnElement) {
+      document.querySelectorAll('.modal-thumb-btn').forEach(b => b.classList.remove('active'));
+      btnElement.classList.add('active');
+    }
+  },
+
   selectModalStem(productId, label, price, btnElement) {
     document.querySelectorAll('.stem-opt-btn').forEach(b => b.classList.remove('selected'));
     btnElement.classList.add('selected');
@@ -291,12 +346,13 @@ const App = {
   modalAddToCart() {
     if (!this.activeProductModal) return;
     const { product, selectedStem, selectedColor, currentPrice } = this.activeProductModal;
+    const coverImage = Array.isArray(product.image) ? product.image[0] : product.image;
     
     CartManager.addItem({
       id: product.id,
       name: product.name,
       price: currentPrice,
-      image: product.image,
+      image: coverImage,
       selectedStem: selectedStem ? selectedStem.label : "Standard",
       selectedColor: selectedColor,
       quantity: 1
@@ -315,27 +371,26 @@ const App = {
     const dateInput = document.getElementById('modal-delivery-date');
     const slotInput = document.getElementById('modal-delivery-slot');
     const locationInput = document.getElementById('modal-delivery-location');
-    const cardMsgInput = document.getElementById('modal-card-message');
 
     InstagramEngine.orderSingleProduct(product, {
       stemOption: selectedStem,
       boxColor: selectedColor,
       deliveryDate: dateInput ? dateInput.value : '',
       deliverySlot: slotInput ? slotInput.value : '',
-      location: locationInput ? locationInput.value.trim() : '',
-      cardMessage: cardMsgInput ? cardMsgInput.value.trim() : ''
+      location: locationInput ? locationInput.value.trim() : ''
     });
   },
 
   quickAddToCart(productId) {
     const product = PRODUCTS_DATA.find(p => p.id === productId);
     if (!product) return;
+    const coverImage = Array.isArray(product.image) ? product.image[0] : product.image;
 
     CartManager.addItem({
       id: product.id,
       name: product.name,
       price: product.price,
-      image: product.image,
+      image: coverImage,
       selectedStem: product.stemOptions ? product.stemOptions[0].label : "Standard",
       selectedColor: product.boxColors ? product.boxColors[0] : "Signature",
       quantity: 1
@@ -529,7 +584,7 @@ const App = {
         resultBox.innerHTML = `
           <div style="display: flex; flex-direction: column; gap: 8px;">
             <div style="font-weight: 600; font-size: 0.95rem;">✨ Delivery Available in ${query}!</div>
-            <p style="margin: 0; font-size: 0.84rem;">Delivery within 1 Day (Lilies: 3 Days, Tulips: 4 Days) across Kannur & Kozhikode.</p>
+            <p style="margin: 0; font-size: 0.84rem;">Delivery within 1 Day (Lilies: 3 Days, Tulips & Hydrangeas: 4 Days) across Kannur & Kozhikode.</p>
             <div style="margin-top: 4px;">
               <a href="https://ig.me/m/ya.warda_?text=${encodeURIComponent(`Hello YA.WARDA, I would like to order flowers for delivery to ${query}.`)}" target="_blank" class="btn btn-dm btn-sm">Order on Instagram DM</a>
             </div>

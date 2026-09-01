@@ -14,9 +14,7 @@ const CartManager = {
     deliveryAddress: "",
     deliveryCity: "Kuttiady / Calicut",
     deliveryDate: "",
-    deliverySlot: "Evening (4:00 PM – 8:00 PM)",
-    cardMessage: "",
-    waxSealStyle: "Gold Crest Seal"
+    deliverySlot: "Evening (4:00 PM – 8:00 PM)"
   },
 
   STORAGE_KEY: "yawarda_luxury_cart",
@@ -158,14 +156,12 @@ const CartManager = {
     const city = document.getElementById('cart-delivery-city');
     const date = document.getElementById('cart-delivery-date');
     const slot = document.getElementById('cart-delivery-slot');
-    const message = document.getElementById('cart-card-message');
 
     if (recipient) this.state.recipientName = recipient.value.trim();
     if (address) this.state.deliveryAddress = address.value.trim();
     if (city) this.state.deliveryCity = city.value;
     if (date) this.state.deliveryDate = date.value;
     if (slot) this.state.deliverySlot = slot.value;
-    if (message) this.state.cardMessage = message.value.trim();
   },
 
   calculateTotals() {

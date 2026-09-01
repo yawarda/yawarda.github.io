@@ -71,9 +71,6 @@ const WhatsAppEngine = {
     
     msg += `*Estimated Total:* ₹${customData.totalPrice.toLocaleString('en-IN')}\n\n`;
 
-    if (customData.cardMessage) {
-      msg += `💌 *Personal Wax-Sealed Message:* "${customData.cardMessage}"\n`;
-    }
     if (customData.recipientName) {
       msg += `👤 *Recipient:* ${customData.recipientName}\n`;
     }

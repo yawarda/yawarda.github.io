@@ -84,14 +84,14 @@
   font-size: 1.65rem;
   letter-spacing: 0.04em;
   font-weight: 400;
-  color: var(--color-primary);
+  color: var(--color-dm-orange);
   line-height: 1;
   text-transform: uppercase;
   transition: var(--transition-smooth);
 }
 
 .brand-logo:hover .logo-main {
-  color: var(--color-accent-dark);
+  color: var(--color-dm-orange-dark);
 }
 
 .brand-logo .logo-sub {
@@ -797,17 +797,27 @@
 }
 
 /* 8. DELIVERY PINCODE & CITY CHECKER */
+#pincode-section {
+  position: relative;
+}
+
+#pincode-section .section-tag {
+  color: var(--color-dm-orange);
+}
+
 .pincode-checker-box {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  padding: 40px;
-  max-width: 800px;
+  background-color: #FFFFFF;
+  border: 1px solid #E5D8CC;
+  border-radius: 12px;
+  padding: 44px 36px;
+  max-width: 780px;
   margin: 0 auto;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 16px 40px rgba(174, 55, 18, 0.08), 0 2px 8px rgba(0, 0, 0, 0.03);
   text-align: center;
 }
 
-.pincode-form {
+.pincode-form,
+.pincode-input-row {
   display: flex;
   gap: 12px;
   max-width: 540px;
@@ -817,15 +827,19 @@
 .pincode-input {
   flex: 1;
   padding: 14px 20px;
-  border: 1px solid var(--color-border);
-  font-size: 0.95rem;
-  background-color: var(--color-surface-alt);
-  transition: border-color var(--transition-fast);
+  border: 1px solid #D8CABE;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  color: #1C1917;
+  background-color: #FAF8F5;
+  transition: all var(--transition-fast);
+  outline: none;
 }
 
 .pincode-input:focus {
-  border-color: var(--color-primary);
+  border-color: var(--color-dm-orange);
   background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(174, 55, 18, 0.15);
 }
 
 .pincode-result {
@@ -874,28 +888,34 @@
 }
 
 /* 9. VIP CONCIERGE & DIRECT WHATSAPP ORDER SECTION */
-.concierge-card {
-  background: linear-gradient(135deg, #181818 0%, #0d0d0d 100%);
-  border: 1px solid rgba(197, 168, 128, 0.4);
-  padding: 60px 48px;
+#concierge-section {
+  background: linear-gradient(135deg, #181716 0%, #0E0D0C 100%) !important;
   color: #FAF8F5;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
   position: relative;
   overflow: hidden;
 }
 
-.concierge-card::before {
+#concierge-section::before {
   content: '';
   position: absolute;
   top: -100px;
   right: -100px;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(197, 168, 128, 0.18) 0%, rgba(0,0,0,0) 70%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(197, 168, 128, 0.12) 0%, rgba(0,0,0,0) 70%);
   pointer-events: none;
+}
+
+.concierge-card {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: #FAF8F5;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  position: relative;
 }
 
 .concierge-details h3 {
@@ -1136,6 +1156,46 @@
   gap: 8px;
 }
 
+/* High contrast inputs & visible placeholders in Cart Drawer */
+.cart-drawer .form-control,
+.cart-card-editor .form-control,
+#cart-promo-input {
+  background-color: #FAF8F5 !important;
+  border: 1px solid #D8CABE !important;
+  color: #1C1917 !important;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.cart-drawer .form-control:focus,
+.cart-card-editor .form-control:focus,
+#cart-promo-input:focus {
+  border-color: var(--color-dm-orange) !important;
+  background-color: #FFFFFF !important;
+  box-shadow: 0 0 0 3px rgba(174, 55, 18, 0.14) !important;
+  outline: none;
+}
+
+.cart-drawer .form-control::placeholder,
+.cart-card-editor .form-control::placeholder,
+#cart-promo-input::placeholder {
+  color: #78716C !important;
+  opacity: 1 !important;
+}
+
+.cart-drawer .form-control::-webkit-input-placeholder,
+.cart-card-editor .form-control::-webkit-input-placeholder,
+#cart-promo-input::-webkit-input-placeholder {
+  color: #78716C !important;
+}
+
+.cart-drawer .form-control::-moz-placeholder,
+.cart-card-editor .form-control::-moz-placeholder,
+#cart-promo-input::-moz-placeholder {
+  color: #78716C !important;
+  opacity: 1 !important;
+}
+
 .cart-drawer-footer {
   padding: 24px 28px;
   background-color: #FFFFFF;
@@ -1218,8 +1278,10 @@
   background-color: #121212;
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .modal-main-img {
@@ -1227,6 +1289,54 @@
   height: 100%;
   max-height: 540px;
   object-fit: cover;
+  transition: opacity 0.25s ease;
+}
+
+.modal-thumbnails {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  background: rgba(18, 18, 18, 0.72);
+  backdrop-filter: blur(8px);
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 5;
+}
+
+.modal-thumb-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  background: none;
+  opacity: 0.65;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.modal-thumb-btn:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.modal-thumb-btn.active {
+  opacity: 1;
+  border-color: #FFFFFF;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.modal-thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .modal-content {
@@ -1235,11 +1345,59 @@
   flex-direction: column;
 }
 
+.modal-delivery-card {
+  margin-bottom: 20px;
+  background: #FFFFFF;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.modal-delivery-card-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-accent-dark);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.modal-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.modal-form-grid:last-child {
+  margin-bottom: 0;
+}
+
+.modal-field-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-field-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #57534E;
+  margin-bottom: 5px;
+  min-height: 14px;
+  display: block;
+}
+
 .modal-field-input,
 .modal-field-select {
   width: 100%;
-  height: 38px;
-  padding: 6px 12px;
+  height: 40px;
+  padding: 8px 12px;
   background: #FAF8F5 !important;
   border: 1px solid #D6D0C7 !important;
   border-radius: 4px;
@@ -1262,7 +1420,27 @@
 
 .modal-field-input::placeholder {
   color: #78716C !important;
-  font-size: 0.76rem;
+  font-size: 0.78rem;
+}
+
+.modal-actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.modal-dm-btn,
+.modal-cart-btn {
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  padding: 0 16px;
+  border-radius: 4px;
 }
 
 /* 12. INSTAGRAM LOOKBOOK & COMMUNITY GRID */

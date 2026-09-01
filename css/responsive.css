@@ -124,8 +124,8 @@
 
   .concierge-card {
     grid-template-columns: 1fr;
-    gap: 32px;
-    padding: 40px 24px;
+    gap: 36px;
+    padding: 0;
   }
 
   .footer-grid {
@@ -280,6 +280,45 @@
     right: 20px;
     width: 52px;
     height: 52px;
+  }
+
+  /* Quick View Modal on Mobile */
+  .modal-container {
+    width: 94%;
+    max-width: 460px;
+    max-height: 88vh;
+    border-radius: 12px;
+    margin: 16px auto;
+  }
+
+  .modal-gallery {
+    max-height: 260px;
+  }
+
+  .modal-content {
+    padding: 22px 16px;
+  }
+
+  .modal-delivery-card {
+    padding: 14px 12px;
+    margin-bottom: 16px;
+  }
+
+  .modal-form-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .modal-actions-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .modal-dm-btn,
+  .modal-cart-btn {
+    width: 100%;
+    height: 46px;
+    font-size: 0.84rem;
   }
 }
 

@@ -111,6 +111,7 @@ const CustomizerEngine = {
   },
 
   init() {
+    if (typeof document === 'undefined' || !document.getElementById('customizer-section')) return;
     this.bindEvents();
     this.recalculateTotal();
   },
