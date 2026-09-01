@@ -1352,6 +1352,10 @@
   border-radius: 8px;
   border: 1px solid var(--color-border);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .modal-delivery-card-title {
@@ -1368,9 +1372,16 @@
 
 .modal-form-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
   margin-bottom: 12px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.modal-form-grid.modal-form-single {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .modal-form-grid:last-child {
@@ -1380,6 +1391,10 @@
 .modal-field-col {
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .modal-field-label {
@@ -1395,8 +1410,10 @@
 
 .modal-field-input,
 .modal-field-select {
-  width: 100%;
-  height: 40px;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: 42px;
   padding: 8px 12px;
   background: #FAF8F5 !important;
   border: 1px solid #D6D0C7 !important;
@@ -1405,9 +1422,20 @@
   font-size: 0.82rem !important;
   font-family: inherit;
   font-weight: 500;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
   outline: none;
+  display: block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   transition: all var(--transition-fast);
+}
+
+.modal-field-input::-webkit-date-and-time-value {
+  text-align: left;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
 }
 
 .modal-field-input:focus,

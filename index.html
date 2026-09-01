@@ -828,7 +828,7 @@
             </div>
           </div>
 
-          <div class="modal-form-grid" style="grid-template-columns: 1fr;">
+          <div class="modal-form-grid modal-form-single">
             <div class="modal-field-col">
               <label class="modal-field-label">Delivery Area / Pincode</label>
               <input type="text" id="modal-delivery-location" class="modal-field-input" placeholder="e.g. Kuttiady, Calicut, 673508">
@@ -860,13 +860,15 @@
   <!-- Additional CSS for modal options -->
   <style>
     .stem-opt-btn, .color-pill-btn {
-      padding: 6px 14px;
-      font-size: 0.75rem;
+      padding: 8px 14px;
+      font-size: 0.78rem;
       border: 1px solid var(--color-border);
       background-color: #FFFFFF;
       color: var(--color-primary);
       cursor: pointer;
+      border-radius: 4px;
       transition: all var(--transition-fast);
+      box-sizing: border-box;
     }
     .stem-opt-btn.selected, .color-pill-btn.selected {
       border-color: var(--color-primary);

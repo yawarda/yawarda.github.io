@@ -295,23 +295,81 @@
     max-height: 260px;
   }
 
+  .modal-container {
+    width: 92% !important;
+    max-width: 440px !important;
+    border-radius: 12px;
+    margin: 16px auto;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
   .modal-content {
     padding: 22px 16px;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  #modal-stem-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .stem-opt-btn {
+    width: 100%;
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 0.82rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .modal-delivery-card {
     padding: 14px 12px;
     margin-bottom: 16px;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
   }
 
   .modal-form-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) !important;
     gap: 10px;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .modal-field-col {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .modal-field-input,
+  .modal-field-select {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
   }
 
   .modal-actions-grid {
     grid-template-columns: 1fr;
     gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .modal-dm-btn,
@@ -319,6 +377,7 @@
     width: 100%;
     height: 46px;
     font-size: 0.84rem;
+    box-sizing: border-box;
   }
 }
 
