@@ -311,8 +311,6 @@ const InstagramEngine = {
       msg += `👤 *Recipient:* ${customData.recipientName}\n`;
     }
 
-    }
-
     msg += `\n━━━━━━━━━━━━━━━━━━━━━━\n`;
     msg += `Hello @${YA_WARDA_IG_USERNAME}, I created this bespoke arrangement on your website and would love to finalize the order. Please confirm availability! 💐`;
 

@@ -5,30 +5,29 @@
 
 const PRODUCTS_DATA = [
   {
-    id: "prod-0001",
-    name: "Pure White Avalanche Roses Bouquet",
-    subtitle: "Signature White Roses · Elegance Hand-Tied Wrap",
+    id: "prod-0318",
+    name: "Blush Two-Tone Roses & Baby's Breath Bouquet",
+    subtitle: "Soft Pastel Petals · Dreamy Cloud Gypsophila",
     category: "roses",
-    subCategory: "classic",
-    price: 1400,
-    originalPrice: 1750,
-    badge: "Bestseller",
+    subCategory: "mixed",
+    price: 1600,
+    originalPrice: 1950,
+    badge: "Romantic",
     image: [
-      "images/IMG_0001_1400.jpg"
+      "images/IMG_0318_1600.jpg"
     ],
-    rating: 5.0,
-    reviewCount: 42,
-    flowers: "Pure White Avalanche Roses, Baby's Breath & Fresh Eucalyptus",
-    boxType: "Hand-Tied Premium Kraft & Satin Ribbon",
-    boxColors: ["Pure White", "Parisian Ivory", "Midnight Black"],
+    rating: 4.9,
+    reviewCount: 37,
+    flowers: "Blush Pink & Cream Two-Tone Roses, Gypsophila & Foliage",
+    boxType: "Soft Petal Pink Wrap with Satin Ribbon",
+    boxColors: ["Blush Pink", "Pearl White", "Silver Mist"],
     stemOptions: [
-      { label: "Classic (12 Stems)", price: 1400, default: true },
-      { label: "Deluxe (20 Stems)", price: 2100 },
-      { label: "Grandeur (30 Stems)", price: 2900 }
+      { label: "Classic (15 Stems)", price: 1600, default: true },
+      { label: "Deluxe (25 Stems)", price: 2350 }
     ],
-    occasions: ["anniversary", "wedding", "sympathy", "birthday"],
-    description: "An ethereal bouquet of freshly harvested pure white Avalanche roses with whisper-soft baby's breath, tied with a delicate silk ribbon.",
-    careInstructions: "Trim stems 1cm diagonally upon delivery. Place in cold water away from direct sun."
+    occasions: ["birthday", "anniversary", "proposals", "newbeginnings"],
+    description: "Delicate blush tipped roses set against a fluffy cloud of baby's breath for a fairytale romance feel.",
+    careInstructions: "Keep in a cool shaded area for long lasting blooms."
   },
   {
     id: "prod-0070",
@@ -187,7 +186,7 @@ const PRODUCTS_DATA = [
     subtitle: "Multi-Tier Opulence · Exotic Blooms Extravaganza",
     category: "luxury",
     subCategory: "luxury",
-    price: 5900,
+    price: 6200,
     originalPrice: 7200,
     badge: "VIP Luxury",
     image: [
@@ -454,29 +453,30 @@ const PRODUCTS_DATA = [
     careInstructions: "Trim stem ends and add floral food to vase water."
   },
   {
-    id: "prod-0318",
-    name: "Blush Two-Tone Roses & Baby's Breath Bouquet",
-    subtitle: "Soft Pastel Petals · Dreamy Cloud Gypsophila",
+    id: "prod-0001",
+    name: "Pure White Avalanche Roses Bouquet",
+    subtitle: "Signature White Roses · Elegance Hand-Tied Wrap",
     category: "roses",
-    subCategory: "mixed",
-    price: 1600,
-    originalPrice: 1950,
-    badge: "Romantic",
+    subCategory: "classic",
+    price: 1400,
+    originalPrice: 1750,
+    badge: "Bestseller",
     image: [
-      "images/IMG_0318_1600.jpg"
+      "images/IMG_0001_1400.jpg"
     ],
-    rating: 4.9,
-    reviewCount: 37,
-    flowers: "Blush Pink & Cream Two-Tone Roses, Gypsophila & Foliage",
-    boxType: "Soft Petal Pink Wrap with Satin Ribbon",
-    boxColors: ["Blush Pink", "Pearl White", "Silver Mist"],
+    rating: 5.0,
+    reviewCount: 42,
+    flowers: "Pure White Avalanche Roses, Baby's Breath & Fresh Eucalyptus",
+    boxType: "Hand-Tied Premium Kraft & Satin Ribbon",
+    boxColors: ["Pure White", "Parisian Ivory", "Midnight Black"],
     stemOptions: [
-      { label: "Classic (15 Stems)", price: 1600, default: true },
-      { label: "Deluxe (25 Stems)", price: 2350 }
+      { label: "Classic (12 Stems)", price: 1400, default: true },
+      { label: "Deluxe (20 Stems)", price: 2100 },
+      { label: "Grandeur (30 Stems)", price: 2900 }
     ],
-    occasions: ["birthday", "anniversary", "proposals", "newbeginnings"],
-    description: "Delicate blush tipped roses set against a fluffy cloud of baby's breath for a fairytale romance feel.",
-    careInstructions: "Keep in a cool shaded area for long lasting blooms."
+    occasions: ["anniversary", "wedding", "sympathy", "birthday"],
+    description: "An ethereal bouquet of freshly harvested pure white Avalanche roses with whisper-soft baby's breath, tied with a delicate silk ribbon.",
+    careInstructions: "Trim stems 1cm diagonally upon delivery. Place in cold water away from direct sun."
   },
   {
     id: "prod-0320",
