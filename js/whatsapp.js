@@ -3,7 +3,7 @@
    Handles direct Instagram DM order formatting (https://ig.me/m/ya.warda_)
    ========================================================================== */
 
-const YA_WARDA_IG_USERNAME = "ya.warda_"; // Official YA.WARDA Instagram Handle
+var YA_WARDA_IG_USERNAME = window.YA_WARDA_IG_USERNAME || "ya.warda_";
 
 const WhatsAppEngine = {
   /**

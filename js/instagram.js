@@ -5,7 +5,7 @@
    copies text to clipboard, shows 5s countdown popup, and forwards to IG DM.
    ========================================================================== */
 
-const YA_WARDA_IG_USERNAME = "ya.warda_"; // Official Instagram Handle: @ya.warda_
+var YA_WARDA_IG_USERNAME = window.YA_WARDA_IG_USERNAME || "ya.warda_";
 
 const InstagramEngine = {
   redirectTimer: null,
