@@ -32,14 +32,20 @@ const WhatsAppEngine = {
    * Quick 1-Click Order for an individual product
    */
   orderSingleProduct(product, options = {}) {
-    const stemOption = options.stemOption || (product.stemOptions ? product.stemOptions.find(o => o.default) : null);
-    const boxColor = options.boxColor || (product.boxColors ? product.boxColors[0] : "Signature");
+    const stemOption = options.stemOption !== undefined
+      ? options.stemOption
+      : (product.stemOptions && product.stemOptions.length > 0 ? product.stemOptions.find(o => o.default) || product.stemOptions[0] : null);
+
+    const boxColor = options.boxColor !== undefined
+      ? options.boxColor
+      : (product.boxColors && product.boxColors.length > 0 ? product.boxColors[0] : (product.boxType || null));
+
     const price = stemOption ? stemOption.price : product.price;
 
     let msg = `🌸 *NEW ORDER REQUEST — YA.WARDA FRESH FLOWERS*\n`;
     msg += `━━━━━━━━━━━━━━━━━━━━━━\n`;
     msg += `*Item:* ${product.name}\n`;
-    if (stemOption) msg += `*Stem Size:* ${stemOption.label}\n`;
+    if (stemOption && stemOption.label) msg += `*Stem Size:* ${stemOption.label}\n`;
     if (boxColor) msg += `*Box / Wrap Color:* ${boxColor}\n`;
     msg += `*Price:* ₹${price.toLocaleString('en-IN')}\n\n`;
 

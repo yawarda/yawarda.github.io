@@ -187,11 +187,19 @@ const App = {
     const product = PRODUCTS_DATA.find(p => p.id === productId);
     if (!product) return;
 
+    const hasStems = Boolean(product.stemOptions && product.stemOptions.length > 0);
+    const hasBoxColors = Boolean(product.boxColors && product.boxColors.length > 0);
+    const hasBoxType = Boolean(product.boxType && product.boxType.trim() !== '');
+    const hasBoxOption = hasBoxColors || hasBoxType;
+
+    const defaultStem = hasStems ? (product.stemOptions.find(s => s.default) || product.stemOptions[0]) : null;
+    const defaultColor = hasBoxColors ? product.boxColors[0] : (hasBoxType ? product.boxType : null);
+
     this.activeProductModal = {
       product: product,
-      selectedStem: product.stemOptions ? product.stemOptions.find(s => s.default) || product.stemOptions[0] : null,
-      selectedColor: product.boxColors ? product.boxColors[0] : "Signature",
-      currentPrice: product.price
+      selectedStem: defaultStem,
+      selectedColor: defaultColor,
+      currentPrice: defaultStem ? defaultStem.price : product.price
     };
 
     const modal = document.getElementById('product-quick-view-modal');
@@ -201,7 +209,9 @@ const App = {
     const descEl = document.getElementById('modal-product-desc');
     const flowersEl = document.getElementById('modal-product-flowers');
     const priceEl = document.getElementById('modal-product-price');
+    const stemsGroup = document.getElementById('modal-stem-group');
     const stemsContainer = document.getElementById('modal-stem-options');
+    const colorGroup = document.getElementById('modal-color-group');
     const colorsContainer = document.getElementById('modal-color-options');
 
     const delivery = getProductDeliveryInfo(product);
@@ -260,28 +270,47 @@ const App = {
     if (flowersEl) flowersEl.textContent = product.flowers;
 
     // Stem options
-    if (stemsContainer) {
-      if (product.stemOptions && product.stemOptions.length > 0) {
-        stemsContainer.innerHTML = product.stemOptions.map(stem => `
-          <button class="stem-opt-btn ${stem.default ? 'selected' : ''}" 
-                  onclick="App.selectModalStem('${product.id}', '${stem.label}', ${stem.price}, this)">
-            ${stem.label} — ₹${stem.price.toLocaleString('en-IN')}
-          </button>
-        `).join('');
+    if (stemsGroup) {
+      if (hasStems) {
+        stemsGroup.style.display = 'block';
+        if (stemsContainer) {
+          stemsContainer.innerHTML = product.stemOptions.map(stem => `
+            <button class="stem-opt-btn ${stem.default ? 'selected' : ''}" 
+                    onclick="App.selectModalStem('${product.id}', '${stem.label}', ${stem.price}, this)">
+              ${stem.label} — ₹${stem.price.toLocaleString('en-IN')}
+            </button>
+          `).join('');
+        }
       } else {
-        stemsContainer.innerHTML = `<span style="font-size: 0.8rem; color: var(--color-text-muted);">Standard Haute Arrangement</span>`;
+        stemsGroup.style.display = 'none';
+        if (stemsContainer) stemsContainer.innerHTML = '';
       }
     }
 
     // Color options
-    if (colorsContainer) {
-      if (product.boxColors && product.boxColors.length > 0) {
-        colorsContainer.innerHTML = product.boxColors.map((col, idx) => `
-          <button class="color-pill-btn ${idx === 0 ? 'selected' : ''}" 
-                  onclick="App.selectModalColor('${col}', this)">
-            ${col}
-          </button>
-        `).join('');
+    if (colorGroup) {
+      if (hasBoxOption) {
+        colorGroup.style.display = 'block';
+        if (colorsContainer) {
+          if (hasBoxColors) {
+            colorsContainer.innerHTML = product.boxColors.map((col, idx) => `
+              <button class="color-pill-btn ${idx === 0 ? 'selected' : ''}" 
+                      onclick="App.selectModalColor('${col}', this)">
+                ${col}
+              </button>
+            `).join('');
+          } else if (hasBoxType) {
+            colorsContainer.innerHTML = `
+              <button class="color-pill-btn selected" 
+                      onclick="App.selectModalColor('${product.boxType}', this)">
+                ${product.boxType}
+              </button>
+            `;
+          }
+        }
+      } else {
+        colorGroup.style.display = 'none';
+        if (colorsContainer) colorsContainer.innerHTML = '';
       }
     }
 
@@ -353,8 +382,8 @@ const App = {
       name: product.name,
       price: currentPrice,
       image: coverImage,
-      selectedStem: selectedStem ? selectedStem.label : "Standard",
-      selectedColor: selectedColor,
+      selectedStem: selectedStem ? selectedStem.label : "",
+      selectedColor: selectedColor || "",
       quantity: 1
     });
 
@@ -374,7 +403,7 @@ const App = {
 
     InstagramEngine.orderSingleProduct(product, {
       stemOption: selectedStem,
-      boxColor: selectedColor,
+      boxColor: selectedColor || null,
       deliveryDate: dateInput ? dateInput.value : '',
       deliverySlot: slotInput ? slotInput.value : '',
       location: locationInput ? locationInput.value.trim() : ''
@@ -386,13 +415,19 @@ const App = {
     if (!product) return;
     const coverImage = Array.isArray(product.image) ? product.image[0] : product.image;
 
+    const hasStem = Boolean(product.stemOptions && product.stemOptions.length > 0);
+    const hasColor = Boolean(
+      (product.boxColors && product.boxColors.length > 0) || 
+      (product.boxType && product.boxType.trim() !== '')
+    );
+
     CartManager.addItem({
       id: product.id,
       name: product.name,
       price: product.price,
       image: coverImage,
-      selectedStem: product.stemOptions ? product.stemOptions[0].label : "Standard",
-      selectedColor: product.boxColors ? product.boxColors[0] : "Signature",
+      selectedStem: hasStem ? product.stemOptions[0].label : "",
+      selectedColor: hasColor ? (product.boxColors && product.boxColors.length > 0 ? product.boxColors[0] : product.boxType) : "",
       quantity: 1
     });
 

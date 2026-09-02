@@ -108,11 +108,14 @@ const CartManager = {
   },
 
   addItem(productItem) {
+    const cleanStem = productItem.selectedStem || "";
+    const cleanColor = productItem.selectedColor || "";
+
     // Check if duplicate exists with same stem & color
     const existingIndex = this.state.items.findIndex(
       item => item.id === productItem.id &&
-              item.selectedStem === productItem.selectedStem &&
-              item.selectedColor === productItem.selectedColor
+              (item.selectedStem || "") === cleanStem &&
+              (item.selectedColor || "") === cleanColor
     );
 
     if (existingIndex > -1) {
@@ -123,8 +126,8 @@ const CartManager = {
         name: productItem.name,
         price: productItem.price,
         image: productItem.image,
-        selectedStem: productItem.selectedStem || "Standard",
-        selectedColor: productItem.selectedColor || "Signature",
+        selectedStem: cleanStem,
+        selectedColor: cleanColor,
         quantity: productItem.quantity || 1
       });
     }
@@ -203,12 +206,16 @@ const CartManager = {
     if (footer) footer.style.display = 'block';
     if (cardEditor) cardEditor.style.display = 'block';
 
-    itemsContainer.innerHTML = this.state.items.map((item, index) => `
+    itemsContainer.innerHTML = this.state.items.map((item, index) => {
+      const metaParts = [item.selectedStem, item.selectedColor].filter(Boolean);
+      const metaHtml = metaParts.length > 0 ? `<div class="cart-item-meta">${metaParts.join(' · ')}</div>` : '';
+
+      return `
       <div class="cart-item-row">
         <img src="${item.image}" alt="${item.name}" class="cart-item-img">
         <div class="cart-item-info">
           <h4 class="cart-item-title">${item.name}</h4>
-          <div class="cart-item-meta">${item.selectedStem} · ${item.selectedColor}</div>
+          ${metaHtml}
           <div class="cart-item-bottom">
             <div class="cart-qty-ctrl">
               <button class="cart-qty-btn" onclick="CartManager.updateQuantity(${index}, -1)">−</button>
@@ -219,7 +226,8 @@ const CartManager = {
           </div>
         </div>
       </div>
-    `).join('');
+      `;
+    }).join('');
 
     // Update summary values
     const subtotalEl = document.getElementById('cart-subtotal-val');

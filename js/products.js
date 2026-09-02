@@ -784,20 +784,18 @@ const PRODUCTS_DATA = [
     subtitle: "Dramatic Contrast · Scarlet Asiatic Lilies & Snow Roses",
     category: "lilies",
     subCategory: "mixed",
-    price: 1200,
-    originalPrice: 1500,
+    price: 3500,
+    originalPrice: 3800,
     badge: "Value Pick",
     image: [
-      "images/IMG_0742_1200.png"
+      "images/IMG_1691_3500.png"
     ],
     rating: 4.8,
     reviewCount: 26,
     flowers: "Deep Crimson Lilies, White Roses, Chrysanthemums & Greenery",
-    boxType: "Two-Tone Kraft Wrap",
-    boxColors: ["Burgundy Kraft", "Snow White", "Charcoal"],
+    // boxType: "Two-Tone Kraft Wrap",
+    // boxColors: ["Burgundy Kraft", "Snow White", "Charcoal"],
     stemOptions: [
-      { label: "Petite Bouquet", price: 1200, default: true },
-      { label: "Deluxe Bouquet", price: 1750 }
     ],
     occasions: ["anniversary", "birthday", "romance"],
     description: "Bold crimson lilies paired with delicate white roses create an energetic and stylish contrast.",

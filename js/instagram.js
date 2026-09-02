@@ -237,8 +237,14 @@ const InstagramEngine = {
    * 1. Quick 1-Click Order for an individual product / modal selection
    */
   orderSingleProduct(product, options = {}) {
-    const stemOption = options.stemOption || (product.stemOptions ? product.stemOptions.find(o => o.default) || product.stemOptions[0] : null);
-    const boxColor = options.boxColor || (product.boxColors ? product.boxColors[0] : "Signature Luxury Wrap");
+    const stemOption = options.stemOption !== undefined
+      ? options.stemOption
+      : (product.stemOptions && product.stemOptions.length > 0 ? product.stemOptions.find(o => o.default) || product.stemOptions[0] : null);
+
+    const boxColor = options.boxColor !== undefined
+      ? options.boxColor
+      : (product.boxColors && product.boxColors.length > 0 ? product.boxColors[0] : (product.boxType || null));
+
     const price = stemOption ? stemOption.price : product.price;
 
     const deliveryInfo = typeof getProductDeliveryInfo === "function" ? getProductDeliveryInfo(product) : { timeline: "1-3 days", detailText: "Fast dispatch", badgeText: "Delivery in 1 Day" };
@@ -247,7 +253,7 @@ const InstagramEngine = {
     msg += `━━━━━━━━━━━━━━━━━━━━━━\n`;
     msg += `💐 *Bouquet:* ${product.name}\n`;
     if (product.subtitle) msg += `🌿 *Style:* ${product.subtitle}\n`;
-    if (stemOption) msg += `📏 *Size / Stems:* ${stemOption.label}\n`;
+    if (stemOption && stemOption.label) msg += `📏 *Size / Stems:* ${stemOption.label}\n`;
     if (boxColor) msg += `🎨 *Wrap / Box Color:* ${boxColor}\n`;
     msg += `💰 *Price:* ₹${price.toLocaleString('en-IN')}\n`;
     msg += `⏱️ *Timeline:* ${deliveryInfo.badgeText || "Delivery in 1 Day"}\n\n`;
