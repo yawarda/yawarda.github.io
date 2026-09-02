@@ -202,6 +202,19 @@ const App = {
       currentPrice: defaultStem ? defaultStem.price : product.price
     };
 
+    if (typeof gtag === 'function') {
+      gtag('event', 'view_item', {
+        currency: 'INR',
+        value: product.price,
+        items: [{
+          item_id: product.id,
+          item_name: product.name,
+          price: product.price,
+          item_category: product.category
+        }]
+      });
+    }
+
     const modal = document.getElementById('product-quick-view-modal');
     const imgEl = document.getElementById('modal-product-img');
     const subtitleEl = document.getElementById('modal-product-subtitle');

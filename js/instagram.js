@@ -65,6 +65,14 @@ const InstagramEngine = {
     // Auto copy text immediately
     this.copyToClipboard(message);
 
+    if (typeof gtag === 'function') {
+      gtag('event', 'generate_lead', {
+        event_category: 'Order',
+        event_label: title,
+        method: 'Instagram DM'
+      });
+    }
+
     if (typeof document === 'undefined') return;
 
     // Remove existing modal if any

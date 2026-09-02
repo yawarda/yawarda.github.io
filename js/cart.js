@@ -134,6 +134,20 @@ const CartManager = {
 
     this.saveToStorage();
     this.render();
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'add_to_cart', {
+        currency: 'INR',
+        value: (productItem.price || 0) * (productItem.quantity || 1),
+        items: [{
+          item_id: productItem.id,
+          item_name: productItem.name,
+          price: productItem.price,
+          quantity: productItem.quantity || 1,
+          item_variant: [cleanStem, cleanColor].filter(Boolean).join(' / ')
+        }]
+      });
+    }
   },
 
   updateQuantity(index, delta) {

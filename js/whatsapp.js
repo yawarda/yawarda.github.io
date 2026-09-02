@@ -19,6 +19,12 @@ const WhatsAppEngine = {
    * Opens Instagram DM directly in a new tab/app
    */
   openDM(message) {
+    if (typeof gtag === 'function') {
+      gtag('event', 'generate_lead', {
+        event_category: 'Order',
+        method: 'WhatsApp / DM'
+      });
+    }
     const url = this.createLink(message);
     window.open(url, '_blank');
   },
