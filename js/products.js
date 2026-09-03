@@ -56,26 +56,26 @@ const PRODUCTS_DATA = [
   },
   {
     id: "prod-0091",
-    name: "Pure White Tulips Hand-Tied Bouquet",
-    subtitle: "Imported Holland White Tulips · Minimalist Luxe",
+    name: "Artificial White Tulips Hand-Tied Bouquet",
+    subtitle: "Artifical White Tulips · Minimalist Luxe",
     category: "tulips",
     subCategory: "tulips",
     price: 950,
     originalPrice: 1200,
-    badge: "Seasonal",
+    badge: "Artificial",
     image: [
       "images/IMG_0091_950.jpg"
     ],
     rating: 4.9,
     reviewCount: 28,
-    flowers: "Farm-Fresh Holland White Tulips & Fresh Foliage",
-    boxType: "Matte Alabaster Paper Wrap with Ribbon",
-    boxColors: ["Pure White", "Minimalist Kraft", "Pastel Grey"],
+    flowers: "Artificial White Tulips",
+    boxType: "Wrap",
+    boxColors: ["Pure White"],
     stemOptions: [
-      { label: "Petite (10 Stems)", price: 950, default: true },
-      { label: "Classic (20 Stems)", price: 1800 }
+      { label: "10 Stems", price: 950, default: true },
+      { label: "20 Stems", price: 1800 }
     ],
-    occasions: ["spring", "birthday", "sympathy", "newbeginnings"],
+    occasions: ["Bridal", "newbeginnings"],
     description: "Crisp, architectural white Holland tulips celebrating simplicity, pure affection, and refined European elegance.",
     careInstructions: "Keep in shallow cold water. Tulips continue to grow slightly in the vase."
   },
