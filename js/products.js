@@ -12,18 +12,18 @@ const PRODUCTS_DATA = [
     subCategory: "mixed",
     price: 1600,
     originalPrice: 1950,
-    badge: "Romantic",
+    badge: "Bestseller",
     image: [
       "images/IMG_0318_1600.jpg"
     ],
     rating: 4.9,
     reviewCount: 37,
-    flowers: "Blush Pink & Cream Two-Tone Roses, Gypsophila & Foliage",
+    flowers: "Blush Pink & Cream Two-Tone Roses, Gypsophila",
     boxType: "Soft Petal Pink Wrap with Satin Ribbon",
-    boxColors: ["Blush Pink", "Pearl White", "Silver Mist"],
+    boxColors: ["Blush Pink", "Pearl White"],
     stemOptions: [
-      { label: "Classic (15 Stems)", price: 1600, default: true },
-      { label: "Deluxe (25 Stems)", price: 2350 }
+      { label: "Classic (30 Stems)", price: 1600, default: true },
+      { label: "Deluxe (40 Stems)", price: 2000 }
     ],
     occasions: ["birthday", "anniversary", "proposals", "newbeginnings"],
     description: "Delicate blush tipped roses set against a fluffy cloud of baby's breath for a fairytale romance feel.",
@@ -43,12 +43,12 @@ const PRODUCTS_DATA = [
     ],
     rating: 4.9,
     reviewCount: 36,
-    flowers: "Two-Tone Pink Petal Roses, White Spray Chrysanthemums & Greenery",
+    flowers: "Two-Tone Pink Petal Roses, White Spray Chrysanthemums & Baby's Breath",
     boxType: "Pastel Pink Pleated Wrap",
     boxColors: ["Blush Pink", "Soft Lavender", "Ivory Cream"],
     stemOptions: [
-      { label: "Classic (15 Stems)", price: 1500, default: true },
-      { label: "Deluxe (25 Stems)", price: 2200 }
+      { label: "Classic (30 Stems)", price: 1600, default: true },
+      { label: "Deluxe (40 Stems)", price: 2000 }
     ],
     occasions: ["birthday", "romance", "gratitude"],
     description: "Charming two-tone pink blush roses paired with snow-white spray chrysanthemums for a radiant garden aesthetic.",
@@ -68,7 +68,7 @@ const PRODUCTS_DATA = [
     ],
     rating: 4.9,
     reviewCount: 28,
-    flowers: "Artificial White Tulips",
+    flowers: "Artificial White Tulips Bridal Bouquet",
     boxType: "Wrap",
     boxColors: ["Pure White"],
     stemOptions: [
@@ -76,7 +76,7 @@ const PRODUCTS_DATA = [
       { label: "20 Stems", price: 1800 }
     ],
     occasions: ["Bridal", "newbeginnings"],
-    description: "Crisp, architectural white Holland tulips celebrating simplicity, pure affection, and refined European elegance.",
+    description: "White tulips celebrating simplicity, pure affection, and refined European elegance.",
     careInstructions: "Keep in shallow cold water. Tulips continue to grow slightly in the vase."
   },
   {
