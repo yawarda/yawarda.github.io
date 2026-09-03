@@ -325,8 +325,29 @@
           <button class="filter-tab" data-filter="plushie">Gift & Plushies</button>
         </div>
 
-        <div style="font-size: 0.78rem; color: var(--color-accent-dark); font-weight: 500;">
-          Delivery within 1 day across Kuttiady & Kozhikode (Lilies: 3 days · Tulips & Hydrangeas: 4 days)
+        <div class="catalog-toolbar">
+          <div class="catalog-meta-info">
+            <span class="catalog-count-badge" id="catalog-count-display">40 Bouquets</span>
+            <span class="catalog-meta-sep">·</span>
+            <span class="catalog-delivery-note">Delivery within 1 day across Kuttiady & Kozhikode (Lilies: 3 days · Tulips & Hydrangeas: 4 days)</span>
+          </div>
+
+          <div class="catalog-sort-group">
+            <label for="catalog-sort-select" class="catalog-sort-label">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"></line><line x1="17" y1="12" x2="7" y2="12"></line><line x1="13" y1="18" x2="11" y2="18"></line></svg>
+              <span>Sort:</span>
+            </label>
+            <div class="catalog-sort-wrapper">
+              <select id="catalog-sort-select" class="catalog-sort-select" aria-label="Sort bouquets">
+                <option value="relevance" selected>By Relevance</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating">Top Rated & Popular</option>
+                <option value="name-asc">Alphabetical (A–Z)</option>
+              </select>
+              <svg class="catalog-sort-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </div>
         </div>
       </div>
 

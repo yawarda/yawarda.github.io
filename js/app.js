@@ -4,12 +4,14 @@
 
 const App = {
   currentCategory: "all",
+  currentSort: "relevance",
   activeProductModal: null,
 
   init() {
-    this.renderProducts(PRODUCTS_DATA);
+    this.applyFiltersAndSort();
     this.bindNavigation();
     this.bindCategoryFilters();
+    this.bindSorting();
     this.bindQuickViewModal();
     this.bindPincodeChecker();
     this.bindConciergeForm();
@@ -20,6 +22,48 @@ const App = {
     // Initialize subsystems
     CartManager.init();
     CustomizerEngine.init();
+  },
+
+  applyFiltersAndSort() {
+    let list = [...PRODUCTS_DATA];
+
+    // Filter by category
+    if (this.currentCategory && this.currentCategory !== 'all') {
+      list = list.filter(p => p.category === this.currentCategory || p.subCategory === this.currentCategory);
+    }
+
+    // Sort items
+    switch (this.currentSort) {
+      case 'price-asc':
+        list.sort((a, b) => a.price - b.price);
+        break;
+      case 'price-desc':
+        list.sort((a, b) => b.price - a.price);
+        break;
+      case 'rating':
+        list.sort((a, b) => {
+          if (b.rating !== a.rating) return b.rating - a.rating;
+          return (b.reviewCount || 0) - (a.reviewCount || 0);
+        });
+        break;
+      case 'name-asc':
+        list.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      case 'relevance':
+      default:
+        // Keep authentic curated florist catalog order
+        break;
+    }
+
+    this.renderProducts(list);
+    this.updateCatalogCount(list.length);
+  },
+
+  updateCatalogCount(count) {
+    const countEl = document.getElementById('catalog-count-display');
+    if (countEl) {
+      countEl.textContent = `${count} ${count === 1 ? 'Bouquet' : 'Bouquets'}`;
+    }
   },
 
   renderProducts(products) {
@@ -92,12 +136,8 @@ const App = {
         document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
 
-        if (category === 'all') {
-          this.renderProducts(PRODUCTS_DATA);
-        } else {
-          const filtered = PRODUCTS_DATA.filter(p => p.category === category || p.subCategory === category);
-          this.renderProducts(filtered);
-        }
+        this.currentCategory = category;
+        this.applyFiltersAndSort();
       });
     });
 
@@ -115,16 +155,33 @@ const App = {
         if (tab) {
           tab.click();
         } else {
-          const filtered = PRODUCTS_DATA.filter(p => p.subCategory === silhouette || p.category === silhouette);
-          this.renderProducts(filtered);
+          this.currentCategory = silhouette;
+          this.applyFiltersAndSort();
         }
       });
     });
   },
 
+  bindSorting() {
+    const sortSelect = document.getElementById('catalog-sort-select');
+    if (!sortSelect) return;
+
+    sortSelect.addEventListener('change', (e) => {
+      this.currentSort = e.target.value;
+      this.applyFiltersAndSort();
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'select_content', {
+          content_type: 'sort',
+          item_id: this.currentSort
+        });
+      }
+    });
+  },
+
   bindNavigation() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
+      anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
         if (href === '#' || !href) return;
         const target = document.querySelector(href);
@@ -275,7 +332,7 @@ const App = {
       descEl.innerHTML = `
         <div style="display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: #166534; font-weight: 600; background: #F0FDF4; border: 1px solid #BBF7D0; padding: 6px 12px; border-radius: 4px; margin-bottom: 12px;">
           <span>🚚</span>
-          <span>${delivery.detailText} across Kozhikode & Kannur</span>
+          <span>${delivery.detailText} across Kozhikode, Kannur & Malappuram</span>
         </div>
         <div>${product.description}</div>
       `;
@@ -389,7 +446,7 @@ const App = {
     if (!this.activeProductModal) return;
     const { product, selectedStem, selectedColor, currentPrice } = this.activeProductModal;
     const coverImage = Array.isArray(product.image) ? product.image[0] : product.image;
-    
+
     CartManager.addItem({
       id: product.id,
       name: product.name,
@@ -430,7 +487,7 @@ const App = {
 
     const hasStem = Boolean(product.stemOptions && product.stemOptions.length > 0);
     const hasColor = Boolean(
-      (product.boxColors && product.boxColors.length > 0) || 
+      (product.boxColors && product.boxColors.length > 0) ||
       (product.boxType && product.boxType.trim() !== '')
     );
 
@@ -522,7 +579,7 @@ const App = {
 
     const cleanPin = query.replace(/\D/g, '');
     let apiUrl = '';
-    
+
     if (cleanPin.length === 6) {
       apiUrl = `https://api.postalpincode.in/pincode/${cleanPin}`;
     } else {
@@ -624,7 +681,7 @@ const App = {
     } catch (error) {
       console.warn("Pincode API error, providing graceful fallback:", error);
       const isKnownDistrict = ['673508', '673001', '673101', '673525', '673504', '673305', '670692', '670001'].some(p => query.includes(p)) ||
-                              ['kuttiady', 'calicut', 'kozhikode', 'kannur', 'vadakara', 'perambra', 'panoor', 'thalassery'].some(k => query.toLowerCase().includes(k));
+        ['kuttiady', 'calicut', 'kozhikode', 'kannur', 'vadakara', 'perambra', 'panoor', 'thalassery'].some(k => query.toLowerCase().includes(k));
 
       if (isKnownDistrict) {
         resultBox.className = 'pincode-result success';

@@ -35,7 +35,7 @@ const PRODUCTS_DATA = [
     subtitle: "Blush Garden Mix · Soft Rose Wrap",
     category: "roses",
     subCategory: "mixed",
-    price: 1500,
+    price: 1600,
     originalPrice: 1850,
     badge: "Trending",
     image: [
@@ -81,7 +81,7 @@ const PRODUCTS_DATA = [
   },
   {
     id: "prod-0130",
-    name: "Red & Coral Roses with Mixed Carnations Bouquet",
+    name: "Red & Orange Roses with Mixed Chrysanthemums and Carnations Bouquet",
     subtitle: "Vibrant Crimson Blooms · Dual Tone Palette",
     category: "roses",
     subCategory: "mixed",
@@ -93,12 +93,12 @@ const PRODUCTS_DATA = [
     ],
     rating: 4.9,
     reviewCount: 39,
-    flowers: "Deep Red Dutch Roses, Coral Spray Roses, Ruffled Carnations & Fillers",
+    flowers: "Deep Red Dutch Roses, Orange Dutch Roses, White Chrysanthemums & White Carnations",
     boxType: "Dual Tone Kraft & Fabric Wrap",
-    boxColors: ["Burgundy Crimson", "Charcoal Slate", "Gold Kraft"],
+    boxColors: ["Burgundy Crimson", "Charcoal Slate", "Kraft Paper"],
     stemOptions: [
-      { label: "Deluxe Bouquet", price: 3000, default: true },
-      { label: "Grandeur Bouquet", price: 4200 }
+      { label: "Deluxe Bouquet (60 Stems)", price: 3000, default: true },
+      { label: "Grandeur Bouquet (80 Stems)", price: 4000 }
     ],
     occasions: ["anniversary", "romance", "congratulations"],
     description: "A rich, passionate contrast of deep crimson roses with coral hues and delicate carnations.",
@@ -118,7 +118,7 @@ const PRODUCTS_DATA = [
     ],
     rating: 5.0,
     reviewCount: 47,
-    flowers: "Baby Blue Hydrangeas, White Avalanche Roses, Baby's Breath & Salal",
+    flowers: "Baby Blue Hydrangeas, White Avalanche Roses.",
     boxType: "Royal Blue & Ivory Layered Wrap",
     boxColors: ["Azure Blue", "Snow White", "Midnight Navy"],
     stemOptions: [
@@ -131,7 +131,7 @@ const PRODUCTS_DATA = [
   },
   {
     id: "prod-0186",
-    name: "Pink Lilies, Gerberas & Roses Grand Fan Bouquet",
+    name: "Pink Lilies, Gerberas, Roses & Carnations Grand Fan Bouquet",
     subtitle: "Spectacular Fan Arrangement · Exotic Oriental Lilies",
     category: "lilies",
     subCategory: "fan",
@@ -143,7 +143,7 @@ const PRODUCTS_DATA = [
     ],
     rating: 5.0,
     reviewCount: 53,
-    flowers: "Pink Oriental Lilies, Coral Gerberas, Roses, Statice & Fresh Ferns",
+    flowers: "Pink Oriental Lilies, Coral Gerberas, Roses, Carnations & Fillers",
     boxType: "Bespoke Fan Pleated Wrap",
     boxColors: ["Blush Mint", "Soft Peach", "Imperial Lilac"],
     stemOptions: [
@@ -173,8 +173,8 @@ const PRODUCTS_DATA = [
     boxColors: ["Obsidian Black", "Ruby Red", "Parisian Kraft"],
     stemOptions: [
       { label: "Classic (10 Stems)", price: 950, default: true },
-      { label: "Deluxe (20 Stems)", price: 1750 },
-      { label: "Grand (30 Stems)", price: 2500 }
+      { label: "Deluxe (20 Stems)", price: 1400 },
+      { label: "Grand (30 Stems)", price: 1600 }
     ],
     occasions: ["romance", "anniversary", "proposals", "valentines"],
     description: "The timeless expression of true love: velvety deep red roses nestled in a starry halo of white baby's breath.",
@@ -196,13 +196,13 @@ const PRODUCTS_DATA = [
     reviewCount: 31,
     flowers: "Roses in Multiple Hues, Vibrant Gerberas, Chrysanthemums & Golden Fillers",
     boxType: "Regal Layered Floor/Table Display Wrap",
-    boxColors: ["Imperial Emerald", "Royal Gold", "Midnight Slate"],
+    boxColors: ["Butter Yellow", "Jade Green", "Midnight Slate"],
     stemOptions: [
-      { label: "Grand Display", price: 5900, default: true },
-      { label: "Majestic Display", price: 8000 }
+      { label: "Grand Display (Without Mini Bouquet)", price: 6200, default: true },
+      { label: "Majestic Display (With Mini Bouquet)", price: 8500 }
     ],
     occasions: ["vip", "wedding", "milestone", "corporate"],
-    description: "An imposing, luxurious floral architecture boasting dozens of prime blooms handcrafted for high-profile celebrations.",
+    description: "An imposing, luxurious floral architecture boasting dozens of prime blooms handcrafted for high-profile celebrations. Mini Bouquet Not Included!",
     careInstructions: "Replenish hydration daily into the arrangement base."
   },
   {
@@ -219,12 +219,12 @@ const PRODUCTS_DATA = [
     ],
     rating: 4.8,
     reviewCount: 29,
-    flowers: "Red Roses, Pink Spray Roses, White Daisies & Button Mums",
+    flowers: "Red Roses, Pink Spray Roses & White Daisies",
     boxType: "Natural Eco Kraft Paper with Twine/Ribbon",
-    boxColors: ["Rustic Kraft", "Cream White", "Olive Green"],
+    boxColors: ["Rustic Kraft", "Cream White", "Blush Pink"],
     stemOptions: [
-      { label: "Hand-Tied Petite", price: 950, default: true },
-      { label: "Hand-Tied Deluxe", price: 1500 }
+      { label: "Hand-Tied Petite (10 Stems)", price: 950, default: true },
+      { label: "Hand-Tied Deluxe (25 Stems)", price: 1500 }
     ],
     occasions: ["birthday", "thinkingofyou", "cheerup", "friendship"],
     description: "Rustic romance meets casual warmth in this lovely blend of colorful roses and jaunty white daisy chrysanthemums.",
@@ -244,11 +244,11 @@ const PRODUCTS_DATA = [
     ],
     rating: 5.0,
     reviewCount: 19,
-    flowers: "Massive White Oriental Lilies, Premium Dutch Roses, Orchids & Exotic Greens",
+    flowers: "Massive White Asiatic Lilies, Premium Dutch Roses, Orchids & Exotic Greens",
     boxType: "Handmade Vintage Leather-Trimmed Woven Trunk",
     boxColors: ["Antique Tan Trunk", "Ivory White Velvet", "Midnight Trunk"],
     stemOptions: [
-      { label: "Grandeur Trunk (Over 60 Stems)", price: 11000, default: true }
+      { label: "Grandeur Trunk (200+ Stems)", price: 11000, default: true }
     ],
     occasions: ["wedding", "grandcelebration", "vip", "anniversary"],
     description: "The pinnacle of floral grandeur. An awe-inspiring luxury trunk overflowing with immaculate white lilies and rare roses.",
@@ -309,7 +309,7 @@ const PRODUCTS_DATA = [
     subtitle: "Extraordinary Scale · Handcrafted Statement Piece",
     category: "luxury",
     subCategory: "fan",
-    price: 6500,
+    price: 6800,
     originalPrice: 7800,
     badge: "Haute Luxe",
     image: [
@@ -317,11 +317,11 @@ const PRODUCTS_DATA = [
     ],
     rating: 5.0,
     reviewCount: 26,
-    flowers: "Pink Stargazer Lilies, Spray Carnations, Roses & Golden Statice",
+    flowers: "Pink Oriental Lilies, Chrysanthemums, Roses, Blue Daisies & Baby's Breath",
     boxType: "Multi-Tier Luxury Display Wrap",
     boxColors: ["Powder Pink", "Champagne Gold", "Mint Sage"],
     stemOptions: [
-      { label: "Grand Bouquet", price: 6500, default: true },
+      { label: "Grand Bouquet", price: 6800, default: true },
       { label: "Imperial Bouquet", price: 8500 }
     ],
     occasions: ["wedding", "engagement", "anniversary", "festive"],
@@ -709,7 +709,7 @@ const PRODUCTS_DATA = [
     subtitle: "Radiant Sunshine · Golden Sunflower & Autumn Blooms",
     category: "mixed",
     subCategory: "classic",
-    price: 1300,
+    price: 1000,
     originalPrice: 1600,
     badge: "Sunshine",
     image: [
@@ -721,8 +721,9 @@ const PRODUCTS_DATA = [
     boxType: "Natural Kraft & Burlap Wrap",
     boxColors: ["Natural Brown Kraft", "Sunflower Yellow", "Sage Green"],
     stemOptions: [
-      { label: "Sunshine Classic", price: 1300, default: true },
-      { label: "Sunshine Deluxe", price: 1950 }
+      { label: "Sunshine Classic (1 Stem)", price: 1000, default: true },
+      { label: "Sunshine Deluxe (3 Stem)", price: 1500 },
+      { label: "Sunshine Royal (5 Stem)", price: 2000 }
     ],
     occasions: ["birthday", "cheerup", "getwellsoon", "friendship"],
     description: "Brighten anyone's day instantly with a glowing golden sunflower nestled among sunny chrysanthemums and purple statice.",
@@ -734,7 +735,7 @@ const PRODUCTS_DATA = [
     subtitle: "Monochrome Haute Couture · Pure White & Champagne Tones",
     category: "lilies",
     subCategory: "luxury",
-    price: 3500,
+    price: 2500,
     originalPrice: 4200,
     badge: "Editorial Pick",
     image: [
@@ -746,8 +747,8 @@ const PRODUCTS_DATA = [
     boxType: "Sleek Parisian White & Black Trim Wrap",
     boxColors: ["Pure Alabaster", "Ivory Gold", "Midnight Slate"],
     stemOptions: [
-      { label: "Deluxe Bouquet", price: 3500, default: true },
-      { label: "Grandeur Bouquet", price: 4800 }
+      { label: "Deluxe Bouquet", price: 2500, default: true },
+      { label: "Grandeur Bouquet", price: 3500 }
     ],
     occasions: ["wedding", "anniversary", "corporate", "luxury"],
     description: "A pristine high-fashion bouquet combining regal Casablanca lilies and champagne roses wrapped in sleek monochrome.",
@@ -792,13 +793,15 @@ const PRODUCTS_DATA = [
     ],
     rating: 4.8,
     reviewCount: 26,
-    flowers: "Deep Crimson Lilies, White Roses, Chrysanthemums & Greenery",
+    flowers: "Deep Crimson Lilies, White Roses, Chrysanthemums & Baby's Breath",
     // boxType: "Two-Tone Kraft Wrap",
-    // boxColors: ["Burgundy Kraft", "Snow White", "Charcoal"],
+    boxColors: ["Butter Yellow", "Snow White", "Charcoal Slate"],
     stemOptions: [
+      { label: "Classic Bouquet (60 Flowers & 2 Oriental Lilies)", price: 3500, default: true },
+      { label: "Deluxe Bouquet (100 Oriental Lilies & 2 Oriental Lilies)", price: 6000 },
     ],
     occasions: ["anniversary", "birthday", "romance"],
-    description: "Bold crimson lilies paired with delicate white roses create an energetic and stylish contrast.",
+    description: "Bold Oriental lilies paired with delicate white roses create an energetic and stylish contrast.",
     careInstructions: "Trim stems diagonally and keep in fresh water."
   },
   {
@@ -999,7 +1002,32 @@ const PRODUCTS_DATA = [
     occasions: ["birthday", "anniversary", "gratitude", "thinkingofyou"],
     description: "Delightful coral spray roses and snowy white roses surrounded by enduring purple statice blossoms.",
     careInstructions: "Statice dries beautifully if preserved after water is removed."
-  }
+  },
+  {
+    id: "prod-0926",
+    name: "Gerbera Daisy, Chrysanthemum, Roses & Mixed Greenery",
+    subtitle: "Gerbera Daisy, Chrysanthemum, Roses & Mixed Greenery",
+    category: "mixed",
+    subCategory: "mixed",
+    price: 1250,
+    originalPrice: 1950,
+    badge: "Bestseller",
+    image: [
+      "images/IMG_1610_1200.png"
+    ],
+    rating: 4.9,
+    reviewCount: 37,
+    flowers: "Gerbera Daisy, Chrysanthemum, Roses & Mixed Greenery",
+    boxType: "Soft Petal Pink Wrap with Satin Ribbon",
+    boxColors: ["Buttery Yellow", "Burgundy", "Blush Pink"],
+    stemOptions: [
+      { label: "Classic (20 Stems)", price: 1250, default: true },
+      { label: "Deluxe (40 Stems)", price: 2000 }
+    ],
+    occasions: ["birthday", "proposals", "newbeginnings"],
+    description: "A stunning and vibrant bouquet featuring a mix of Gerbera daisies, chrysanthemums, and roses, complemented by fresh greenery. Perfect for adding a pop of color to any occasion.",
+    careInstructions: "Keep in a cool shaded area for long lasting blooms."
+  },
 ];
 
 /**

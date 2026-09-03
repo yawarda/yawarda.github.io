@@ -433,12 +433,10 @@
 /* 6. CATALOG & PRODUCT GRID */
 .catalog-controls {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   border-bottom: 1px solid var(--color-border);
   padding-bottom: 20px;
   margin-bottom: 36px;
-  flex-wrap: wrap;
   gap: 16px;
 }
 
@@ -458,6 +456,7 @@
   color: var(--color-text-muted);
   border: 1px solid transparent;
   cursor: pointer;
+  background: transparent;
   transition: all var(--transition-fast);
 }
 
@@ -470,6 +469,111 @@
   border-color: var(--color-primary);
   font-weight: 600;
   background-color: #FFFFFF;
+}
+
+.catalog-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.catalog-meta-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  color: var(--color-accent-dark);
+  font-weight: 500;
+  flex-wrap: wrap;
+}
+
+.catalog-count-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  background-color: #FAF4EF;
+  border: 1px solid rgba(174, 55, 18, 0.18);
+  padding: 3px 9px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.catalog-meta-sep {
+  color: var(--color-border);
+}
+
+.catalog-delivery-note {
+  font-size: 0.78rem;
+  color: var(--color-accent-dark);
+}
+
+.catalog-sort-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.catalog-sort-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.catalog-sort-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.catalog-sort-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 7px 30px 7px 12px;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  outline: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.catalog-sort-select:hover {
+  border-color: var(--color-primary);
+}
+
+.catalog-sort-select:focus {
+  border-color: #AE3712;
+  box-shadow: 0 0 0 2px rgba(174, 55, 18, 0.12);
+}
+
+.catalog-sort-arrow {
+  position: absolute;
+  right: 11px;
+  pointer-events: none;
+  color: var(--color-accent-dark);
+  transition: transform var(--transition-fast);
+}
+
+.catalog-sort-wrapper:hover .catalog-sort-arrow {
+  color: var(--color-primary);
 }
 
 .products-grid {
