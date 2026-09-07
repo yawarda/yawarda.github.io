@@ -198,5 +198,30 @@
     "name": "White Roses, Coral Spray Roses & Purple Statice Bouquet",
     "price": 2000,
     "image_name": "IMG_1100_2000.jpg"
+  },
+  {
+    "name": "Gerbera Daisy, Chrysanthemum, Roses & Mixed Greenery",
+    "price": 1250,
+    "image_name": "IMG_1610_1200.png"
+  },
+  {
+    "name": "Blush Asiatic Lily, Gerbera & Rose Bouquet",
+    "price": 2300,
+    "image_name": "IMG_1593_2300.png"
+  },
+  {
+    "name": "The Imperial Grandeur Oriental Lily & Rose Bouquet",
+    "price": 7200,
+    "image_name": "IMG_1750_7200.png"
+  },
+  {
+    "name": "Radiant Stargazer Lily & Pink Rose Fan Bouquet",
+    "price": 3600,
+    "image_name": "IMG_1761_3600.png"
+  },
+  {
+    "name": "Calligraphy Sash 50 Red Dutch Roses Bouquet",
+    "price": 4000,
+    "image_name": "IMG_1809_4000.png"
   }
 ]

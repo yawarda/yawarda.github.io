@@ -1006,7 +1006,7 @@ const PRODUCTS_DATA = [
   {
     id: "prod-0926",
     name: "Gerbera Daisy, Chrysanthemum, Roses & Mixed Greenery",
-    subtitle: "Gerbera Daisy, Chrysanthemum, Roses & Mixed Greenery",
+    subtitle: "Vibrant Gerberas & Chrysanthemums · Warm Contrast",
     category: "mixed",
     subCategory: "mixed",
     price: 1250,
@@ -1018,16 +1018,116 @@ const PRODUCTS_DATA = [
     rating: 4.9,
     reviewCount: 37,
     flowers: "Gerbera Daisy, Chrysanthemum, Roses & Mixed Greenery",
-    boxType: "Soft Petal Pink Wrap with Satin Ribbon",
+    boxType: "Butter Cream Wrap with Burgundy Ribbon",
     boxColors: ["Buttery Yellow", "Burgundy", "Blush Pink"],
     stemOptions: [
-      { label: "Classic (20 Stems)", price: 1250, default: true },
-      { label: "Deluxe (40 Stems)", price: 2000 }
+      { label: "Classic (20 Stems)", price: 1200, default: true },
+      { label: "Deluxe (40 Stems)", price: 1900 }
     ],
     occasions: ["birthday", "proposals", "newbeginnings"],
     description: "A stunning and vibrant bouquet featuring a mix of Gerbera daisies, chrysanthemums, and roses, complemented by fresh greenery. Perfect for adding a pop of color to any occasion.",
     careInstructions: "Keep in a cool shaded area for long lasting blooms."
   },
+  {
+    id: "prod-1593",
+    name: "Blush Asiatic Lily, Gerbera & Rose Bouquet",
+    subtitle: "Radiant Asiatic Lilies, Coral Gerberas & Dutch Roses",
+    category: "mixed",
+    subCategory: "mixed",
+    price: 2300,
+    originalPrice: 2800,
+    badge: "Trending",
+    image: [
+      "images/IMG_1593_2300.png"
+    ],
+    rating: 4.9,
+    reviewCount: 31,
+    flowers: "Fresh Asiatic Lilies, Pink & White Gerberas, Two-Tone Dutch Roses & Greenery",
+    boxType: "Frosted Blush Wrap with Iridescent Ribbon",
+    boxColors: ["Blush Pink", "Soft Ivory", "Pastel Cream"],
+    stemOptions: [
+      { label: "Classic Bouquet", price: 2300, default: true },
+      { label: "Deluxe Bouquet", price: 3200 }
+    ],
+    occasions: ["birthday", "anniversary", "congratulations", "thinkingofyou"],
+    description: "A charming, radiant bouquet featuring fresh Asiatic lily stems, cheerful pink and white gerberas, and romantic two-tone roses, dressed in frosted blush wrapping with an iridescent ribbon.",
+    careInstructions: "Trim stems at a 45° angle every 2 days and place in fresh, cool water away from direct heat."
+  },
+  {
+    id: "prod-1750",
+    name: "The Imperial Grandeur Oriental Lily & Rose Bouquet",
+    subtitle: "Opulent Stargazer Lilies, Dutch Roses, Gerberas & Golden Sage Wrap",
+    category: "luxury",
+    subCategory: "luxury",
+    price: 7200,
+    originalPrice: 8500,
+    badge: "Grand Luxury",
+    image: [
+      "images/IMG_1750_7200.png"
+    ],
+    rating: 5.0,
+    reviewCount: 42,
+    flowers: "Pink Oriental Lilies, Premium Dutch Roses, Vivid Gerberas, Lavender Chrysanthemums & Statice",
+    boxType: "Two-Tone Sage & Gold Grand Presentation Wrap",
+    boxColors: ["Sage Green & Gold", "Ivory & Champagne", "Royal Black & Gold"],
+    stemOptions: [
+      { label: "Grand Bouquet (50+ Blooms)", price: 7200, default: true },
+      { label: "Majestic Grandeur (75+ Blooms)", price: 9500 }
+    ],
+    occasions: ["anniversary", "grandoccasions", "proposals", "weddings"],
+    description: "An extraordinary grand luxury masterpiece. Overflowing with fragrant pink Oriental lilies, velvety two-tone Dutch roses, vivid magenta gerberas, and lavender chrysanthemums, cradled in dual-tone sage olive and gold wrapping with an included 'Best Wishes' card.",
+    careInstructions: "Keep in a cool, air-conditioned space. Replenish with plenty of fresh water daily to sustain this grand arrangement."
+  },
+  {
+    id: "prod-1761",
+    name: "Radiant Stargazer Lily & Pink Rose Fan Bouquet",
+    subtitle: "Pink Oriental Lilies, Tender Spray Roses & Lilac Chrysanthemums",
+    category: "lilies",
+    subCategory: "fan",
+    price: 3600,
+    originalPrice: 4200,
+    badge: "Bestseller",
+    image: [
+      "images/IMG_1761_3600.png"
+    ],
+    rating: 4.9,
+    reviewCount: 34,
+    flowers: "Pink Oriental Lilies, Pink Spray Roses, White & Lilac Chrysanthemums",
+    boxType: "Pastel Pink Ruffled Wrap with Iridescent Ribbon",
+    boxColors: ["Pastel Pink", "Frosted White", "Lilac Mist"],
+    stemOptions: [
+      { label: "Classic Fan Bouquet", price: 3600, default: true },
+      { label: "Deluxe Fan Bouquet", price: 4600 }
+    ],
+    occasions: ["birthday", "anniversary", "romance", "congratulations"],
+    description: "An exquisite upright fan-style presentation featuring starburst pink Oriental lilies opening gracefully alongside tender pink spray roses and lilac chrysanthemums in a ruffled pastel wrap.",
+    careInstructions: "Lilies open gradually over several days. Gently remove pollen anthers as blooms open to preserve petal purity."
+  },
+  {
+    id: "prod-1809",
+    name: "Calligraphy Sash 50 Red Dutch Roses Bouquet",
+    subtitle: "الجزء الأجمل بحياتي أنت · The Most Beautiful Part of My Life is You",
+    category: "roses",
+    subCategory: "luxury",
+    price: 4000,
+    originalPrice: 4800,
+    badge: "Romantic Exclusive",
+    image: [
+      "images/IMG_1809_4000.png"
+    ],
+    rating: 5.0,
+    reviewCount: 38,
+    flowers: "50 Fresh Crimson Red Dutch Roses with Custom Calligraphy Printed Ribbon Sash",
+    boxType: "Champagne Cream Wrap with Calligraphy Sash & Crimson Ribbon",
+    boxColors: ["Champagne Cream", "Pure White", "Royal Black"],
+    stemOptions: [
+      { label: "Classic (50 Red Roses)", price: 4000, default: true },
+      { label: "Grandeur (100 Red Roses & Lilies)", price: 7200 }
+    ],
+    occasions: ["romance", "anniversary", "proposals", "birthday"],
+    description: "A breathtaking romantic statement bouquet of 50 velvety deep red Dutch roses featuring an elegant calligraphy sash reading 'الجزء الأجمل بحياتي أنت — The most beautiful part of my life is you'. Wrapped in soft champagne cream layers with rich crimson ribbon accents.",
+    careInstructions: "Keep in a cool space away from direct heat. Mist petals gently and refresh water every 2 days."
+  }
 ];
 
 /**
