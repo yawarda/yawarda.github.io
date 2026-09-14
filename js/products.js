@@ -1034,8 +1034,8 @@ const PRODUCTS_DATA = [
     subtitle: "Radiant Asiatic Lilies, Coral Gerberas & Dutch Roses",
     category: "mixed",
     subCategory: "mixed",
-    price: 2300,
-    originalPrice: 2800,
+    price: 2500,
+    originalPrice: 2900,
     badge: "Trending",
     image: [
       "images/IMG_1593_2300.png"
@@ -1046,7 +1046,7 @@ const PRODUCTS_DATA = [
     boxType: "Frosted Blush Wrap with Iridescent Ribbon",
     boxColors: ["Blush Pink", "Soft Ivory", "Pastel Cream"],
     stemOptions: [
-      { label: "Classic Bouquet", price: 2300, default: true },
+      { label: "Classic Bouquet", price: 2500, default: true },
       { label: "Deluxe Bouquet", price: 3200 }
     ],
     occasions: ["birthday", "anniversary", "congratulations", "thinkingofyou"],
