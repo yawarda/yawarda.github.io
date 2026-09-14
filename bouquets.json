@@ -223,5 +223,20 @@
     "name": "Calligraphy Sash 50 Red Dutch Roses Bouquet",
     "price": 4000,
     "image_name": "IMG_1809_4000.png"
+  },
+  {
+    "name": "Lavender Chrysanthemums & White Roses Bouquet",
+    "price": 1750,
+    "image_name": "IMG_1948_1750.png"
+  },
+  {
+    "name": "Radiant Sunflowers & Baby's Breath Bouquet",
+    "price": 2000,
+    "image_name": "IMG_1960_2000.png"
+  },
+  {
+    "name": "Berry & Blush Chrysanthemums with White Roses Bouquet",
+    "price": 2000,
+    "image_name": "IMG_1972_2000.png"
   }
 ]

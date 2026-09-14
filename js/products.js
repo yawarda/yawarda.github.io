@@ -1,6 +1,6 @@
 /* ==========================================================================
    YA.WARDA PRODUCT CATALOG DATA (REAL FLORIST BOUQUETS)
-   All 40 Authentic Bouquets with Stripped Pricing & High-Res Photography
+   All 48 Authentic Bouquets with Stripped Pricing & High-Res Photography
    ========================================================================== */
 
 const PRODUCTS_DATA = [
@@ -1127,6 +1127,81 @@ const PRODUCTS_DATA = [
     occasions: ["romance", "anniversary", "proposals", "birthday"],
     description: "A breathtaking romantic statement bouquet of 50 velvety deep red Dutch roses featuring an elegant calligraphy sash reading 'الجزء الأجمل بحياتي أنت — The most beautiful part of my life is you'. Wrapped in soft champagne cream layers with rich crimson ribbon accents.",
     careInstructions: "Keep in a cool space away from direct heat. Mist petals gently and refresh water every 2 days."
+  },
+  {
+    id: "prod-1948",
+    name: "Lavender Chrysanthemums & White Roses Bouquet",
+    subtitle: "Pastel Lavender Blooms · Crisp White Wrap & Satin Ribbon",
+    category: "mixed",
+    subCategory: "mixed",
+    price: 1750,
+    originalPrice: 2150,
+    badge: "New Arrival",
+    image: [
+      "images/IMG_1948_1750.png"
+    ],
+    rating: 4.9,
+    reviewCount: 35,
+    flowers: "Fresh White Roses, Lavender Chrysanthemums & Purple-Edged Spray Carnations",
+    boxType: "Crisp Modern White Wrap with Lavender Satin Ribbon",
+    boxColors: ["Crisp White", "Pastel Lavender", "Soft Violet"],
+    stemOptions: [
+      { label: "Classic Bouquet", price: 1750, default: true },
+      { label: "Deluxe Bouquet", price: 2350 }
+    ],
+    occasions: ["birthday", "anniversary", "congratulations", "thinkingofyou"],
+    description: "A gentle and charming arrangement combining pristine white roses with blushing lavender chrysanthemums and purple-edged carnations, hand-tied in a modern crisp white wrap with a delicate lavender satin ribbon.",
+    careInstructions: "Trim stems at a 45° angle every 2 days and refresh vase with cool water to keep blooms vibrant."
+  },
+  {
+    id: "prod-1960",
+    name: "Radiant Sunflowers & Baby's Breath Bouquet",
+    subtitle: "5 Golden Sunflowers · Cloud of Baby's Breath & Silk Ribbon",
+    category: "mixed",
+    subCategory: "mixed",
+    price: 2000,
+    originalPrice: 2450,
+    badge: "Sunshine Pick",
+    image: [
+      "images/IMG_1960_2000.png"
+    ],
+    rating: 5.0,
+    reviewCount: 41,
+    flowers: "5 Premium Golden Sunflowers, Gypsophila (Baby's Breath) & Fresh Foliage",
+    boxType: "Ivory Sheer Layered Wrap with White Silk Ribbon",
+    boxColors: ["Ivory Cream", "Frosted White", "Natural Kraft"],
+    stemOptions: [
+      { label: "Signature (5 Sunflowers)", price: 2000, default: true },
+      { label: "Grandeur (8 Sunflowers)", price: 2850 }
+    ],
+    occasions: ["birthday", "cheerup", "gratitude", "congratulations", "friendship"],
+    description: "A burst of pure sunshine featuring 5 large, radiant golden sunflowers nestled amidst a delicate cloud of white baby's breath, finished in layered translucent ivory wrapping with an elegant white satin ribbon.",
+    careInstructions: "Sunflowers adore generous fresh water and bright indirect sunlight. Trim stems diagonally every 2 days."
+  },
+  {
+    id: "prod-1972",
+    name: "Berry & Blush Chrysanthemums with White Roses Bouquet",
+    subtitle: "Deep Magenta & Lavender Chrysanthemums · White Roses · Orchid Wrap",
+    category: "mixed",
+    subCategory: "mixed",
+    price: 2000,
+    originalPrice: 2400,
+    badge: "New Arrival",
+    image: [
+      "images/IMG_1972_2000.png"
+    ],
+    rating: 4.9,
+    reviewCount: 38,
+    flowers: "Velvety White Roses, Deep Magenta & Lavender Chrysanthemums, Two-Tone Carnations",
+    boxType: "Pastel Orchid & Blush Multi-Corner Wrap",
+    boxColors: ["Pastel Orchid", "Blush Pink", "Snow White"],
+    stemOptions: [
+      { label: "Classic Bouquet", price: 2000, default: true },
+      { label: "Deluxe Bouquet", price: 2700 }
+    ],
+    occasions: ["birthday", "anniversary", "romance", "congratulations", "celebration"],
+    description: "A rich and vibrant harmony of velvety white roses nestled into a dense bed of deep magenta and soft lavender chrysanthemums and two-tone carnations, enveloped in sculpted orchid-pink petal wrap.",
+    careInstructions: "Keep blooms in cool room temperature. Refresh vase water every 48 hours to prolong chrysanthemum and rose freshness."
   }
 ];
 
