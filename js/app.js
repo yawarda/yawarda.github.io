@@ -22,6 +22,9 @@ const App = {
     // Initialize subsystems
     CartManager.init();
     CustomizerEngine.init();
+    if (typeof EasterEggEngine !== 'undefined') {
+      EasterEggEngine.init();
+    }
   },
 
   applyFiltersAndSort() {

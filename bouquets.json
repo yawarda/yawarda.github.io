@@ -206,7 +206,7 @@
   },
   {
     "name": "Blush Asiatic Lily, Gerbera & Rose Bouquet",
-    "price": 2300,
+    "price": 2500,
     "image_name": "IMG_1593_2300.png"
   },
   {
@@ -238,5 +238,10 @@
     "name": "Berry & Blush Chrysanthemums with White Roses Bouquet",
     "price": 2000,
     "image_name": "IMG_1972_2000.png"
+  },
+  {
+    "name": "The Majestic Sovereign Blush Roses & Lily Fan Bouquet",
+    "price": 7000,
+    "image_name": "IMG_2128_7000.png"
   }
 ]

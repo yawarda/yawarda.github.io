@@ -1,6 +1,6 @@
 /* ==========================================================================
    YA.WARDA PRODUCT CATALOG DATA (REAL FLORIST BOUQUETS)
-   All 48 Authentic Bouquets with Stripped Pricing & High-Res Photography
+   All 49 Authentic Bouquets with Stripped Pricing & High-Res Photography
    ========================================================================== */
 
 const PRODUCTS_DATA = [
@@ -1202,6 +1202,31 @@ const PRODUCTS_DATA = [
     occasions: ["birthday", "anniversary", "romance", "congratulations", "celebration"],
     description: "A rich and vibrant harmony of velvety white roses nestled into a dense bed of deep magenta and soft lavender chrysanthemums and two-tone carnations, enveloped in sculpted orchid-pink petal wrap.",
     careInstructions: "Keep blooms in cool room temperature. Refresh vase water every 48 hours to prolong chrysanthemum and rose freshness."
+  },
+  {
+    id: "prod-2128",
+    name: "The Majestic Sovereign Blush Roses & Lily Fan Bouquet",
+    subtitle: "60+ Dutch Roses · Oriental Lilies & Fragrant Tuberose Crown",
+    category: "luxury",
+    subCategory: "roses",
+    price: 7000,
+    originalPrice: 8200,
+    badge: "Grand Luxury",
+    image: [
+      "images/IMG_2128_7000.png"
+    ],
+    rating: 5.0,
+    reviewCount: 44,
+    flowers: "60+ Premium Blush & Cream Dutch Roses, Oriental Lily Buds & Fragrant Tuberose Accents",
+    boxType: "Architectural Ivory Champagne Fan Wrap with Silk Bow",
+    boxColors: ["Champagne Ivory", "Pure White", "Petal Pink"],
+    stemOptions: [
+      { label: "Medium-Large Luxury (60+ Blooms)", price: 7000, default: true },
+      { label: "Imperial Grandeur (85+ Blooms)", price: 9200 }
+    ],
+    occasions: ["anniversary", "grandoccasions", "proposals", "weddings", "celebration"],
+    description: "A monumental medium-large luxury presentation featuring over 60 velvety blush pink and cream Dutch roses arranged in a grand architectural dome, crowned by fresh Oriental lily buds and fragrant tuberose spikes. Enveloped in multi-layered champagne-ivory pleated wrapping with a delicate silk finish.",
+    careInstructions: "Keep in a cool, air-conditioned space away from direct sunlight. Replenish with plenty of cold, fresh water daily to sustain this opulent arrangement."
   }
 ];
 
