@@ -437,14 +437,12 @@ const EasterEggEngine = {
         <!-- High-Impact Sales Conversion Card -->
         <div class="conversion-card">
           <div class="perk-pill">
-            <span>🎁 Secret Romance Code:</span>
-            <span class="perk-code" id="perk-code-text">${isBoyfriend ? 'SMILE10' : 'QUEEN10'}</span>
-            <button class="perk-copy-btn" onclick="EasterEggEngine.copyCode('${isBoyfriend ? 'SMILE10' : 'QUEEN10'}')">Copy</button>
+            <span>🎁 Secret Romance Perks</span>
           </div>
           <p class="perk-details">
             ${isBoyfriend 
-              ? '<strong>10% OFF</strong> any luxury bouquet + complimentary handwritten calligraphy love card & satin ribbon upgrade!'
-              : '<strong>10% OFF</strong> + complimentary luxury fragrance misting & handwritten note!'}
+              ? 'Complimentary handwritten calligraphy love card & satin ribbon upgrade with any luxury bouquet!'
+              : 'Complimentary luxury fragrance misting & handwritten note with any luxury bouquet!'}
           </p>
 
           <div class="conversion-actions">
@@ -900,10 +898,10 @@ const EasterEggEngine = {
     if (role === 'boyfriend') {
       msg = "Hello YA.WARDA! 🌹 I unlocked your secret Easter Egg experience.\n\n" +
             "I want to surprise my girlfriend with a gorgeous fresh flower bouquet today to make her smile! 🥰\n\n" +
-            "Please apply my secret perk code: *SMILE10* (10% off + free handwritten calligraphy card). What are your quickest delivery arrangements for Kuttiady/Kozhikode?";
+            "Please include the complimentary handwritten calligraphy card & satin ribbon upgrade with my order. What are your quickest delivery arrangements for Kuttiady/Kozhikode?";
     } else {
       msg = "Hello YA.WARDA! 👑 I unlocked your secret Easter Egg experience.\n\n" +
-            "I am treating myself to fresh luxury blooms with my secret perk code: *QUEEN10* (10% off + luxury packaging)! 🌸\n\n" +
+            "I am treating myself to fresh luxury blooms with complimentary luxury packaging! 🌸\n\n" +
             "Can you share your best recommended fresh flower bouquets available for delivery?";
     }
     return `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
@@ -915,7 +913,7 @@ const EasterEggEngine = {
   getHintShareUrl() {
     const text = "Hey handsome 🥰 Look at what I stumbled across on YA.WARDA...\n\n" +
                  "Just leaving this here in case you were wondering what would make me smile today 😉💐✨\n\n" +
-                 "They even gave me a secret 10% OFF code: *QUEEN10* for fresh luxury flowers in Kozhikode & Kuttiady! Check them out: https://yawarda.com";
+                 "Check them out: https://yawarda.com";
     return `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
   },
 
