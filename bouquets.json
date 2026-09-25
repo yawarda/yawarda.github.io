@@ -243,5 +243,15 @@
     "name": "The Majestic Sovereign Blush Roses & Lily Fan Bouquet",
     "price": 7000,
     "image_name": "IMG_2128_7000.png"
+  },
+  {
+    "name": "Grand Luxury Floral Garden Basket Arrangement",
+    "price": 7000,
+    "image_name": "PHOTO-BOX_7000.jpg"
+  },
+  {
+    "name": "Velvet Red Dutch Roses Hand-Tied Luxury Bouquet",
+    "price": 3000,
+    "image_name": "PHOTO-ROSES_3000.jpg"
   }
 ]

@@ -1,6 +1,6 @@
 /* ==========================================================================
    YA.WARDA PRODUCT CATALOG DATA (REAL FLORIST BOUQUETS)
-   All 49 Authentic Bouquets with Stripped Pricing & High-Res Photography
+   All 51 Authentic Bouquets with Stripped Pricing & High-Res Photography
    ========================================================================== */
 
 const PRODUCTS_DATA = [
@@ -1227,6 +1227,56 @@ const PRODUCTS_DATA = [
     occasions: ["anniversary", "grandoccasions", "proposals", "weddings", "celebration"],
     description: "A monumental medium-large luxury presentation featuring over 60 velvety blush pink and cream Dutch roses arranged in a grand architectural dome, crowned by fresh Oriental lily buds and fragrant tuberose spikes. Enveloped in multi-layered champagne-ivory pleated wrapping with a delicate silk finish.",
     careInstructions: "Keep in a cool, air-conditioned space away from direct sunlight. Replenish with plenty of cold, fresh water daily to sustain this opulent arrangement."
+  },
+  {
+    id: "prod-photo-box",
+    name: "Grand Luxury Floral Garden Basket Arrangement",
+    subtitle: "Pink Oriental Lilies, Hydrangea, Sunflowers & Gerberas",
+    category: "luxury",
+    subCategory: "mixed",
+    price: 7000,
+    originalPrice: 8200,
+    badge: "Grand Luxury",
+    image: [
+      "images/PHOTO-BOX_7000.jpg"
+    ],
+    rating: 5.0,
+    reviewCount: 45,
+    flowers: "Pink Lilies, Sky Blue Hydrangea, Golden Sunflowers, Pink Gerberas, Chrysanthemums & Roses",
+    boxType: "Handmade Woven Garden Basket Arrangement",
+    boxColors: ["Natural Woven Basket", "Ivory White", "Pastel Pink"],
+    stemOptions: [
+      { label: "Grand Luxury Basket (50+ Blooms)", price: 7000, default: true },
+      { label: "Imperial Royal Basket (75+ Blooms)", price: 9200 }
+    ],
+    occasions: ["wedding", "anniversary", "grandoccasions", "vip", "celebration"],
+    description: "An opulent, lush floral garden basket brimming with fragrant pink Oriental lilies, a sky-blue hydrangea centerpiece, cheerful golden sunflowers, pink gerberas, and pastel chrysanthemums.",
+    careInstructions: "Add fresh water to the internal arrangement base daily to keep blooms hydrated and long-lasting."
+  },
+  {
+    id: "prod-photo-roses",
+    name: "Velvet Red Dutch Roses Hand-Tied Luxury Bouquet",
+    subtitle: "50+ Deep Crimson Red Dutch Roses · Sculpted White Wrap",
+    category: "roses",
+    subCategory: "luxury",
+    price: 3000,
+    originalPrice: 3600,
+    badge: "Bestseller",
+    image: [
+      "images/PHOTO-ROSES_3000.jpg"
+    ],
+    rating: 5.0,
+    reviewCount: 52,
+    flowers: "50+ Premium Long-Stem Dutch Red Velvet Roses",
+    boxType: "Sculpted Snow White Layered Wrap with Crimson Satin Ribbon",
+    boxColors: ["Snow White", "Classic Black", "Champagne Cream"],
+    stemOptions: [
+      { label: "Classic Luxury (50 Red Roses)", price: 3000, default: true },
+      { label: "Grandeur (75 Red Roses)", price: 4200 }
+    ],
+    occasions: ["romance", "anniversary", "proposals", "valentines", "birthday"],
+    description: "An extraordinary hand-tied luxury bouquet featuring over 50 velvety deep red Dutch roses, wrapped in layered crisp snow-white paper with a crimson satin ribbon bow.",
+    careInstructions: "Trim stem ends diagonally by 1-2 cm and place in a tall vase with cool fresh water."
   }
 ];
 
