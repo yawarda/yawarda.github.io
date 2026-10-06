@@ -1,0 +1,9 @@
+{
+    "promoCodes": [
+        {
+            "code": "CODES10",
+            "discount": 10,
+            "description": "10% off your purchase"
+        }
+    ]
+}

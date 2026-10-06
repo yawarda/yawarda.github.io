@@ -18,11 +18,36 @@ const CartManager = {
   },
 
   STORAGE_KEY: "yawarda_luxury_cart",
+  config: {
+    promoCodes: []
+  },
 
-  init() {
+  async init() {
+    await this.loadConfig();
     this.loadFromStorage();
     this.bindEvents();
     this.render();
+  },
+
+  async loadConfig() {
+    try {
+      const response = await fetch("config.json");
+      if (!response.ok) throw new Error(`Config request failed: ${response.status}`);
+      const config = await response.json();
+      this.config = {
+        promoCodes: Array.isArray(config.promoCodes)
+          ? config.promoCodes
+            .filter(promo => promo && promo.code)
+            .map(promo => ({
+              code: String(promo.code).trim().toUpperCase(),
+              discount: Number.isFinite(Number(promo.discount)) ? Number(promo.discount) : 0,
+              description: String(promo.description || "").trim()
+            }))
+          : []
+      };
+    } catch (e) {
+      console.error("Failed to load application config", e);
+    }
   },
 
   loadFromStorage() {
@@ -81,14 +106,15 @@ const CartManager = {
     if (promoBtn && promoInput) {
       promoBtn.addEventListener('click', () => {
         const code = promoInput.value.trim().toUpperCase();
-        if (code === "WARDA10" || code === "FLORAL10") {
-          this.state.discount = Math.round(this.state.subtotal * 0.10);
+        const promo = this.config.promoCodes.find(item => item.code === code);
+        if (promo) {
           this.state.promoCode = code;
-          App.showToast("10% Privilege Discount Applied!");
+          App.showToast(promo.description || `${promo.discount}% Privilege Discount Applied!`);
         } else if (code === "") {
           this.state.discount = 0;
+          this.state.promoCode = "";
         } else {
-          App.showToast("Invalid code. Try WARDA10", "error");
+          App.showToast("Invalid promo code", "error");
         }
         this.render();
       });
@@ -114,8 +140,8 @@ const CartManager = {
     // Check if duplicate exists with same stem & color
     const existingIndex = this.state.items.findIndex(
       item => item.id === productItem.id &&
-              (item.selectedStem || "") === cleanStem &&
-              (item.selectedColor || "") === cleanColor
+        (item.selectedStem || "") === cleanStem &&
+        (item.selectedColor || "") === cleanColor
     );
 
     if (existingIndex > -1) {
@@ -183,8 +209,9 @@ const CartManager = {
 
   calculateTotals() {
     this.state.subtotal = this.state.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    if (this.state.promoCode && this.state.subtotal > 0) {
-      this.state.discount = Math.round(this.state.subtotal * 0.10);
+    const promo = this.config.promoCodes.find(item => item.code === this.state.promoCode);
+    if (promo && this.state.subtotal > 0) {
+      this.state.discount = Math.round(this.state.subtotal * promo.discount / 100);
     } else {
       this.state.discount = 0;
     }
