@@ -253,5 +253,10 @@
     "name": "Velvet Red Dutch Roses Hand-Tied Luxury Bouquet",
     "price": 3000,
     "image_name": "PHOTO-ROSES_3000.jpg"
+  },
+  {
+    "name": "Grand Imperial 300-Bloom Luxury Bouquet",
+    "price": 13500,
+    "image_name": "assets/images/IMG_3969.PNG"
   }
 ]

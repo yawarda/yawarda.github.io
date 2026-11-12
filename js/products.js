@@ -1277,6 +1277,30 @@ const PRODUCTS_DATA = [
     occasions: ["romance", "anniversary", "proposals", "valentines", "birthday"],
     description: "An extraordinary hand-tied luxury bouquet featuring over 50 velvety deep red Dutch roses, wrapped in layered crisp snow-white paper with a crimson satin ribbon bow.",
     careInstructions: "Trim stem ends diagonally by 1-2 cm and place in a tall vase with cool fresh water."
+  },
+  {
+    id: "prod-img-3969",
+    name: "Grand Imperial 300-Bloom Luxury Bouquet",
+    subtitle: "300 Mixed Roses, Gerberas, Chrysanthemums & Baby's Breath",
+    category: "luxury",
+    subCategory: "mixed",
+    price: 13500,
+    originalPrice: 15500,
+    badge: "Grand Luxury",
+    image: [
+      "assets/images/IMG_3969.PNG"
+    ],
+    rating: 5.0,
+    reviewCount: 12,
+    flowers: "300 Mixed Blooms: Blush Pink & Ivory Roses, Hot Pink & White Gerberas, Purple & White Chrysanthemums, Baby's Breath",
+    boxType: "Ruffled Blush Pink & Ivory Korean Wrap with Satin Ribbon",
+    boxColors: ["Blush Pink", "Ivory White", "Champagne Cream"],
+    stemOptions: [
+      { label: "Grand Imperial (300 Flowers)", price: 13500, default: true }
+    ],
+    occasions: ["wedding", "anniversary", "grandoccasions", "vip", "celebration"],
+    description: "An extraordinary, show-stopping 300-flower round luxury bouquet bursting with blush pink and ivory roses, vibrant pink and white gerberas, purple and white chrysanthemums, and airy baby's breath, finished in layered ruffled blush wrapping.",
+    careInstructions: "Keep stems hydrated with fresh water and store in a cool spot away from direct sunlight."
   }
 ];
 
